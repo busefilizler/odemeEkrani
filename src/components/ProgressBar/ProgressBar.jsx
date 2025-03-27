@@ -5,15 +5,15 @@ export default function ProgressBar() {
   const steps = ["Sipariş Detayları", "Ödeme", "Teşekkürler"];
 
   return (
-    <div className="flex flex-row justify-between items-center bg-black h-20 border-b-2 border-[#e5e8ca] px-40 md:px-40">
+    <div className="flex flex-row justify-between items-center bg-white h-20 border-b-2 border-gray-600 px-40 md:px-40">
       {steps.map((step, index) => (
         <React.Fragment key={index}>
-          <div className="flex flex-row gap-1 items-center text-[#e5e8ca]">
-            <CheckCircleOutlineOutlinedIcon sx={{ color: "#e5e8ca" }} />
-            <span className="text-xs sm:text-sm md:text-base">{step}</span>
+          <div className="flex flex-row gap-1 items-center text-black w-fit">
+            <CheckCircleOutlineOutlinedIcon sx={{ color: "black" }} />
+            <div className="text-xs sm:text-sm md:text-base">{step}</div>
           </div>
           {index !== steps.length - 1 && (
-            <div className="hidden md:block w-8 border border-[#e5e8ca]"></div>
+            <div className="hidden md:block flex-grow m-5 border border-gray-600"></div>
           )}
         </React.Fragment>
       ))}

@@ -1,10 +1,10 @@
 import React from "react";
-import payMedLogo from "../../../public/payMed.jpg";
+import payMedLogo from "../../../public/payMed.png";
 import GppGoodOutlinedIcon from '@mui/icons-material/GppGoodOutlined';
 export default function Header() {
   
   return (
-    <div className="flex flex-row items-center justify-between bg-black h-20 px-10 text-[#e5e8ca] border-b-2 border-[#e5e8ca]">
+    <div className="flex flex-row items-center justify-between bg-white h-20 px-10 text-black border-b-2 border-gray-600">
       <div>
         <img src={payMedLogo} alt="logo" className="w-34" />
       </div>
