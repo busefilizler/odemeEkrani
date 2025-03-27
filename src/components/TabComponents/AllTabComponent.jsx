@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function AllTabComponent() {
   return (
-    <div className="p-20 bg-gray-100">
+    <div className="py-20 pl-20 pr-10 bg-gray-100">
       <CustomerInfo />
     </div>
   )

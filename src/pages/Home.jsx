@@ -2,14 +2,19 @@ import React from 'react'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import ProgressBar from '../components/ProgressBar/ProgressBar'
-import AllTabComponent from '../components/TabComponents/AllTabComponent'
+import BodyLayout from '../layouts/BodyLayout'
 export default function Home() {
+  const steps = [
+    { label: "Sipariş Detayları", disabled: false },
+    { label: "Ödeme", disabled: true },
+    { label: "Teşekkürler", disabled: true }
+  ];
   return (
     <div className="app-container">
       <Header />
-      <ProgressBar />
+      <ProgressBar steps={steps} />
       <div className="content bg-gray-100">
-        <AllTabComponent />
+        <BodyLayout />
       </div>
       <Footer />
     </div>

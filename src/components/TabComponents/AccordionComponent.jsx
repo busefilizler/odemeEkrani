@@ -6,22 +6,22 @@ import Typography from '@mui/material/Typography';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 export default function AccordionComponent({ title, children, defaultExpanded = false }) {
+  const panelId = `panel-${title.replace(/\s+/g, '-').toLowerCase()}`;
+
   return (
-    <div>
-      <Accordion defaultExpanded={defaultExpanded}>
-        <AccordionSummary
-          expandIcon={<ArrowDropDownIcon fontSize="large" sx={{ color: "red" }} />}
-          aria-controls="panel1-content"
-          id="panel1-header"
-        >
-          <Typography component="div" className='h-14 flex items-center px-3 !font-semibold !text-lg'>{title}</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            {children}
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-    </div>
+    <Accordion defaultExpanded={defaultExpanded}>
+      <AccordionSummary
+        expandIcon={<ArrowDropDownIcon fontSize="large" sx={{ color: "red" }} />}
+        aria-controls={`${panelId}-content`}
+        id={`${panelId}-header`}
+      >
+        <Typography component="span" className="h-14 flex items-center px-3 !font-semibold !text-lg">
+          {title}
+        </Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+        {children}
+      </AccordionDetails>
+    </Accordion>
   );
 }
