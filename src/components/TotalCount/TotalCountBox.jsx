@@ -21,10 +21,10 @@ export default function TotalCountBox() {
       <Card className="p-5" variant="outlined">
         <CardContent className="!h-full">
           <div className="flex flex-row items-center justify-between">
-            <Typography className="!font-semibold" sx={{ fontSize: 24 }}>
+            <Typography className="!font-semibold" sx={{ fontSize: 18 }}>
               Toplam Tutar
             </Typography>
-            <Typography className="!font-semibold" sx={{ fontSize: 24 }}>
+            <Typography className="!font-semibold" sx={{ fontSize: 18 }}>
               1000 TL
             </Typography>
           </div>
@@ -46,9 +46,9 @@ export default function TotalCountBox() {
             label="Ön bilgilendirme formunu ve Merafeli satış sözleşmesini okudum ve onaylıyorum."
             sx={{
               display: "flex",
-              paddingTop: 2,
-              flexDirection: "row", // Horizontal alignment
-              alignItems: "flex-start", // Align items to the top
+              paddingTop: 3,
+              flexDirection: "row",
+              alignItems: "flex-start",
               opacity: isChecked ? 1 : 0.5,
               transition: "opacity 0.3s",
             }}
@@ -56,15 +56,30 @@ export default function TotalCountBox() {
         </CardContent>
         <CardActions>
           <Stack spacing={2} direction="row" className="!w-full">
-            <Button variant="contained" disabled={!isChecked} className="!w-full" sx={{ width: "100%" }}>
+            <Button
+              variant="contained"
+              disabled={!isChecked}
+              className="!w-full"
+              sx={{ width: "100%" }}
+            >
               Ödeme Yap
             </Button>
           </Stack>
         </CardActions>
         <CardContent>
-        <Typography className="!font-semibold" sx={{ fontSize: 24 }}>
-              Sipariş Özeti
-            </Typography>
+          <Typography className="!font-semibold" sx={{ fontSize: 18 }}>
+            Sipariş Özeti
+          </Typography>
+          <Typography className="!font-normal" sx={{ fontSize: 12 }}>
+            <div className="flex flex-row items-center justify-between pt-3">
+              <div>Sipariş Tutarı (1 Ürün)</div>
+              <div>1000 TL</div>
+            </div>
+            <div className="flex flex-row items-center justify-between pt-3 text-gray-400">
+              <div>Kargo*</div>
+              <div>Ücretsiz</div>
+            </div>
+          </Typography>
         </CardContent>
       </Card>
     </Box>
