@@ -1,0 +1,28 @@
+{
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "back": "Geri"
+  },
+  "payment": {
+    "title": "Ödeme",
+    "amount": "Tutar",
+    "cardNumber": "Kart Numarası",
+    "expiryDate": "Son Kullanma Tarihi",
+    "cvv": "CVV",
+    "cardHolder": "Kart Sahibi",
+    "pay": "Öde",
+    "processing": "İşleniyor...",
+    "success": "Ödeme başarıyla tamamlandı",
+    "error": "Ödeme işlemi başarısız oldu"
+  },
+  "order": {
+    "details": "Sipariş Detayları",
+    "thanks": "Teşekkürler"
+  }
+} 

@@ -7,7 +7,7 @@ export default function BodyLayout() {
       <div className="bg-gray-100 flex-1">
         <AllTabComponent />
       </div>
-      <div className="pt-20">
+      <div className="pt-20 pr-15">
         <TotalCountBox />
         </div>
     </div>
