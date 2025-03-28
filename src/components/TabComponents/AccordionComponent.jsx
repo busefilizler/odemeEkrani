@@ -11,11 +11,11 @@ export default function AccordionComponent({ title, children, defaultExpanded = 
   return (
     <Accordion defaultExpanded={defaultExpanded}>
       <AccordionSummary
-        expandIcon={<ArrowDropDownIcon fontSize="large" sx={{ color: "red" }} />}
+        expandIcon={<ArrowDropDownIcon fontSize="medium" sx={{ color: "gray" }} />}
         aria-controls={`${panelId}-content`}
         id={`${panelId}-header`}
       >
-        <Typography component="span" className="h-14 flex items-center px-3 !font-semibold !text-lg">
+        <Typography component="span" className="h-14 flex items-center px-3 !font-semibold">
           {title}
         </Typography>
       </AccordionSummary>

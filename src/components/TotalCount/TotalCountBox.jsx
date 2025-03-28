@@ -27,11 +27,11 @@ export default function TotalCountBox() {
         <Card className="p-5" variant="outlined" sx={{ boxShadow: 1 }}>
           <CardContent className="!h-full">
             <div className="flex flex-row items-center justify-between">
-              <Typography className="!font-semibold" sx={{ fontSize: 18 }}>
+              <Typography className="!font-semibold" sx={{ fontSize: 16 }}>
                 Toplam Tutar
               </Typography>
-              <Typography className="!font-semibold" sx={{ fontSize: 18 }}>
-                1000 TL
+              <Typography className="!font-semibold" sx={{ fontSize: 16 }}>
+                1.000 TL
               </Typography>
             </div>
             <FormControlLabel
@@ -67,7 +67,7 @@ export default function TotalCountBox() {
               }
               sx={{
                 display: "flex",
-                paddingTop: 3,
+                paddingTop: 2,
                 flexDirection: "row",
                 alignItems: "flex-start",
                 opacity: isChecked ? 1 : 0.5,
@@ -88,13 +88,13 @@ export default function TotalCountBox() {
             </Stack>
           </CardActions>
           <CardContent>
-            <Typography className="!font-semibold" sx={{ fontSize: 18 }}>
+            <Typography className="!font-semibold" sx={{ fontSize: 16 }}>
               Sipariş Özeti
             </Typography>
             <Typography className="!font-normal" sx={{ fontSize: 12 }}>
               <div className="flex flex-row items-center justify-between pt-3">
                 <div>Sipariş Tutarı (1 Ürün)</div>
-                <div>1000 TL</div>
+                <div>1.000 TL</div>
               </div>
               <div className="flex flex-row items-center justify-between pt-3 text-gray-400">
                 <div>Kargo*</div>

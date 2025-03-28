@@ -17,7 +17,7 @@ export default function Header() {
       </div>
       <div className="flex flex-row items-center space-x-1">
         <GppGoodOutlinedIcon fontSize="large" sx={{ color: "green" }} />
-        <span className=" text-2xl">Güvenli Ödeme</span>
+        <span className=" text-xl">Güvenli Ödeme</span>
       </div>
       <div>
         <Box sx={{ top: 20, right: 20, zIndex: 1000 }}>

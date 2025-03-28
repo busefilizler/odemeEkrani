@@ -14,8 +14,8 @@ export default function OrderDetails() {
             />
           </div>
           <div className="flex flex-col gap-2 ">
-            <div className="font-semibold">Ürün Adı</div>
-            <div className="text-gray-400 text-xs">Ürün Açıklaması</div>
+            <div className="font-semibold">Kaban</div>
+            <div className="text-gray-400 text-xs">Kadın Krem Kaşe Kaban - Beden: M</div>
           </div>
           <div className="flex-1 text-end font-semibold">1.000 TL</div>
         </div>
