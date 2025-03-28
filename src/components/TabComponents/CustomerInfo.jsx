@@ -28,7 +28,7 @@ const CustomerInfo = () => {
               value={customer.customerName}
               onChange={handleChange}
               sx={{
-                backgroundColor: "rgb(244,245,245)", // Tailwind gray-100
+                backgroundColor: "rgb(244,245,245)",
                 borderRadius: "4px",
               }}
             />

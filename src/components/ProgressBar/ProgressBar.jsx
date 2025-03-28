@@ -3,7 +3,7 @@ import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutli
 
 export default function ProgressBar({ steps }) {
   return (
-    <div className="flex flex-row justify-between items-center bg-white h-20 border-b-2 border-gray-300 px-[30%] md:px-[30%]">
+    <div className="flex flex-row justify-between items-center bg-white h-15 border-b-2 border-gray-300 px-[30%] md:px-[30%]">
       {steps.map((step, index) => (
         <React.Fragment key={index}>
           <div className={`flex flex-row gap-1 items-center w-fit ${step?.disabled ? 'text-gray-400' : 'text-black'}`}>
