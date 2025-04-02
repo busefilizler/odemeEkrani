@@ -1,6 +1,6 @@
 import React from "react";
 import carts from "../../../public/carts.png";
-import pam from "../../../public/a.jpg";
+import payMedBlack from "../../../public/payMedBlack.png";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
       <div>Tüm haklar Saklıdır Copyright © 2025</div>
       <div>
         <img
-          src={pam}
+          src={payMedBlack}
           alt="pam"
           className="w-22"/>
       </div>
