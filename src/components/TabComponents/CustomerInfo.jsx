@@ -23,7 +23,6 @@ const CustomerInfo = () => {
               disabled
               id="customerName"
               name="customerName"
-              label="Müşteri Adı"
               variant="outlined"
               value={customer.customerName}
               onChange={handleChange}
@@ -36,7 +35,6 @@ const CustomerInfo = () => {
               disabled
               id="taxNumber"
               name="taxNumber"
-              label="Vergi Numarası"
               variant="outlined"
               value={customer.taxNumber}
               onChange={handleChange}
@@ -51,7 +49,6 @@ const CustomerInfo = () => {
               disabled
               id="email"
               name="email"
-              label="Email"
               variant="outlined"
               value={customer.email}
               onChange={handleChange}
@@ -65,7 +62,6 @@ const CustomerInfo = () => {
               disabled
               id="tel"
               name="tel"
-              label="Telefon Numarası"
               variant="outlined"
               value={customer.tel}
               onChange={handleChange}
