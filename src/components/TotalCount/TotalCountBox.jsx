@@ -23,7 +23,7 @@ export default function TotalCountBox() {
 
   return (
     <>
-      <Box className="w-96" sx={{ minWidth: 375, minHeight: 560 }}>
+      <Box className="w-full lg:w-96" sx={{ minWidth: { xs: '100%', lg: 375 }, minHeight: { xs: 'auto', lg: 560 } }}>
         <Card className="p-5" variant="outlined" sx={{ boxShadow: 1 }}>
           <CardContent className="!h-full">
             <div className="flex flex-row items-center justify-between">

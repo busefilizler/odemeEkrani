@@ -3,13 +3,18 @@ import AllTabComponent from '../components/TabComponents/AllTabComponent'
 import TotalCountBox from '../components/TotalCount/TotalCountBox'
 export default function BodyLayout() {
   return (
-    <div className='flex flex-row px-10'>
+    <div className='flex flex-col lg:flex-row px-4 lg:px-10 relative'>
       <div className="bg-gray-100 flex-1">
         <AllTabComponent />
       </div>
-      <div className="pt-20 pr-15">
-        <TotalCountBox />
+      <div className="lg:pt-20 lg:pr-15 lg:sticky lg:top-0 lg:self-start">
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white shadow-lg z-50">
+          <TotalCountBox />
         </div>
+        <div className="hidden lg:block">
+          <TotalCountBox />
+        </div>
+      </div>
     </div>
   )
 }
