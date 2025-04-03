@@ -1,5 +1,5 @@
 import CustomerInfo from "./CustomerInfo";
-import React from 'react'
+import React from "react";
 import OrderDetails from "./OrderDetails";
 export default function AllTabComponent() {
   return (
@@ -7,5 +7,5 @@ export default function AllTabComponent() {
       <CustomerInfo />
       <OrderDetails />
     </div>
-  )
+  );
 }

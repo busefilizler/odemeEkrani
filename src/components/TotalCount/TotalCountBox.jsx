@@ -75,9 +75,22 @@ export default function TotalCountBox() {
           <Typography className="!font-medium" sx={{ fontSize: 12 }}>
             Toplam Tutar (1 Ürün)
           </Typography>
-          <Typography className="!font-semibold flex justify-between" sx={{ fontSize: 16 }}>
+          <Typography
+            className="!font-semibold flex justify-between"
+            sx={{ fontSize: 16 }}
+          >
             10.000 TL{" "}
-            {!isExpanded ? <KeyboardArrowDownIcon onClick={toggleExpand} className="cursor-pointer" /> : <KeyboardArrowUpIcon onClick={toggleExpand} className="cursor-pointer" />}
+            {!isExpanded ? (
+              <KeyboardArrowDownIcon
+                onClick={toggleExpand}
+                className="cursor-pointer"
+              />
+            ) : (
+              <KeyboardArrowUpIcon
+                onClick={toggleExpand}
+                className="cursor-pointer"
+              />
+            )}
           </Typography>
         </div>
         <div>
@@ -163,7 +176,14 @@ export default function TotalCountBox() {
           </Stack>
         </CardActions>
         <CardContent>
-          <Typography className="!font-semibold" sx={{ fontSize: 16, borderBottom: "1px solid #E5E7EB", paddingBottom: 1 }}>
+          <Typography
+            className="!font-semibold"
+            sx={{
+              fontSize: 16,
+              borderBottom: "1px solid #E5E7EB",
+              paddingBottom: 1,
+            }}
+          >
             Sipariş Özeti
           </Typography>
           <Typography className="!font-normal" sx={{ fontSize: 12 }}>
@@ -184,7 +204,7 @@ export default function TotalCountBox() {
   // Mobil görünüm
   const MobileView = () => (
     <Card className="w-full" variant="outlined">
-      <div >
+      <div>
         <MobileSummary />
       </div>
       {isExpanded && (

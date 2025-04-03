@@ -56,7 +56,7 @@ export default function Header() {
         {[
           {
             value: "tr",
-            flag: <TR title="Turkey" className="w-4 h-4 lg:flex hidden" />, // 
+            flag: <TR title="Turkey" className="w-4 h-4 lg:flex hidden" />, //
             label: "TR",
           },
           {

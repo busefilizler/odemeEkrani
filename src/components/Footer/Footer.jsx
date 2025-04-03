@@ -26,7 +26,7 @@ const Footers = ()  => {
           className="w-22"/>
       </div>
       <div>
-        <img src={carts} alt="carts" className="w-56" />
+        <img src={carts} alt="carts" className="w-40 lg:w-56" />
       </div>
     </div>
   );
