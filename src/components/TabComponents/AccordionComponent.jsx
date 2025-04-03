@@ -4,6 +4,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 export default function AccordionComponent({
   title,
   children,
@@ -17,7 +18,7 @@ export default function AccordionComponent({
         expandIcon={<ExpandMoreIcon fontSize="large" sx={{ color: "gray" }} />}
         aria-controls={`${panelId}-content`}
         id={`${panelId}-header`}
-        sx={{ "& .MuiAccordionSummary-content": { margin: 0 }, minHeight: "56px", }}
+        sx={{ "& .MuiAccordionSummary-content": { margin: 0 }, minHeight: "50px", }}
       >
         <Typography
           component="span"

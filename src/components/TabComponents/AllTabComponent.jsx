@@ -1,6 +1,7 @@
 import CustomerInfo from "./CustomerInfo";
 import OrderDetails from "./OrderDetails";
 import DeliveryInformation from "./DeliveryInformation";
+import PaymentOptions from "./PaymentOptions";
 import React from "react";
 export default function AllTabComponent() {
   return (
@@ -8,6 +9,7 @@ export default function AllTabComponent() {
       <CustomerInfo />
       <OrderDetails />
       <DeliveryInformation />
+      <PaymentOptions />
     </div>
   );
 }

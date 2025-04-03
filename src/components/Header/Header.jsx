@@ -29,6 +29,7 @@ export default function Header() {
         onChange={changeLanguage}
         size="small"
         sx={{
+          borderRadius: 2,
           backgroundColor: "transparent",
           minWidth: 100,
           color: "white",
