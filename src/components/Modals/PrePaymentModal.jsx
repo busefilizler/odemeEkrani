@@ -18,9 +18,9 @@ const PrePaymentModal = ({ open, onClose }) => {
           variant="contained" 
           onClick={onClose}
           sx={{ 
-            backgroundColor: 'red',
+            backgroundColor: 'black',
             '&:hover': {
-              backgroundColor: 'red'
+              backgroundColor: 'black'
             }
           }}
         >

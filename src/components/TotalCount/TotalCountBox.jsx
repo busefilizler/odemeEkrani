@@ -33,9 +33,9 @@ export default function TotalCountBox() {
           control={
             <Checkbox
               sx={{
-                color: "red",
+                color: "black",
                 "&.Mui-checked": {
-                  color: "red",
+                  color: "black",
                 },
                 opacity: isChecked ? 1 : 0.5,
                 transition: "opacity 0.3s",
@@ -51,7 +51,7 @@ export default function TotalCountBox() {
                 style={{
                   cursor: "pointer",
                   textDecoration: "underline",
-                  color: "red",
+                  color: "black",
                 }}
                 onClick={handleOpen}
               >
@@ -86,7 +86,7 @@ export default function TotalCountBox() {
               variant="contained"
               disabled={!isChecked}
               className="!w-full"
-              sx={{ width: "100%", backgroundColor: "red" }}
+              sx={{ width: "100%", backgroundColor: "black" }}
             >
               Ödeme Yap
             </Button>
@@ -113,9 +113,9 @@ export default function TotalCountBox() {
             control={
               <Checkbox
                 sx={{
-                  color: "red",
+                  color: "black",
                   "&.Mui-checked": {
-                    color: "red",
+                    color: "black",
                   },
                   opacity: isChecked ? 1 : 0.5,
                   transition: "opacity 0.3s",
@@ -131,7 +131,7 @@ export default function TotalCountBox() {
                   style={{
                     cursor: "pointer",
                     textDecoration: "underline",
-                    color: "red",
+                    color: "black",
                   }}
                   onClick={handleOpen}
                 >
@@ -156,7 +156,7 @@ export default function TotalCountBox() {
               variant="contained"
               disabled={!isChecked}
               className="!w-full"
-              sx={{ width: "100%", backgroundColor: "red" }}
+              sx={{ width: "100%", backgroundColor: "black" }}
             >
               Ödeme Yap
             </Button>

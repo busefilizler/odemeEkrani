@@ -7,7 +7,7 @@ export default function ProgressBar({ steps }) {
       {steps.map((step, index) => (
         <React.Fragment key={index}>
           <div className={`flex flex-row gap-1 items-center w-fit ${step?.disabled ? 'text-gray-400' : 'text-black'}`}>
-            <CheckCircleOutlineOutlinedIcon sx={{ color: step?.disabled ? "gray" : "red" }} />
+            <CheckCircleOutlineOutlinedIcon sx={{ color: step?.disabled ? "gray" : "black" }} />
             <div className="text-xs sm:text-sm md:text-base">{step?.label}</div>
           </div>
           {index !== steps.length - 1 && (
