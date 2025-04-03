@@ -8,7 +8,7 @@ export default function AccordionComponent({ title, children, defaultExpanded = 
   const panelId = `panel-${title.replace(/\s+/g, '-').toLowerCase()}`;
 
   return (
-    <Accordion defaultExpanded={defaultExpanded}>
+    <Accordion defaultExpanded={defaultExpanded} sx={{ boxShadow: 1}}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon fontSize="large" sx={{ color: "gray" }} />}
         aria-controls={`${panelId}-content`}

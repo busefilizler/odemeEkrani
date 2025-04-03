@@ -98,8 +98,8 @@ export default function TotalCountBox() {
 
   // Masaüstü görünümü
   const DesktopView = () => (
-    <Box className="w-96" sx={{ minWidth: 375, minHeight: 560 }}>
-      <Card className="p-5" variant="outlined" sx={{ boxShadow: 1 }}>
+    <Box className="w-80" sx={{ minWidth: 320, minHeight: 503 }}>
+      <Card className="p-2.5" variant="" sx={{ boxShadow: 1 }}>
         <CardContent className="!h-full">
           <div className="flex flex-row items-center justify-between">
             <Typography className="!font-semibold" sx={{ fontSize: 16 }}>
@@ -163,7 +163,7 @@ export default function TotalCountBox() {
           </Stack>
         </CardActions>
         <CardContent>
-          <Typography className="!font-semibold" sx={{ fontSize: 16 }}>
+          <Typography className="!font-semibold" sx={{ fontSize: 16, borderBottom: "1px solid #E5E7EB", paddingBottom: 1 }}>
             Sipariş Özeti
           </Typography>
           <Typography className="!font-normal" sx={{ fontSize: 12 }}>
