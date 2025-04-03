@@ -35,7 +35,7 @@ const Footers = ()  => {
 export default function Footer() {
   return (
     <div className="flex flex-col items-center justify-center w-full">
-      <div className="lg:hidden">
+      <div className="lg:hidden w-full">
         <TotalCount />
       </div>
       <Footers />

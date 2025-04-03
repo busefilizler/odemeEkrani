@@ -8,7 +8,7 @@ export default function BodyLayout() {
       <div className="bg-gray-100 flex-1">
         <AllTabComponent />
       </div>
-      <div className="hidden lg:block lg:pt-20 lg:pr-15 lg:sticky lg:top-0 lg:self-start">
+      <div className="hidden lg:block lg:pt-10 lg:pr-5 lg:sticky lg:top-0 lg:self-start">
         <TotalCountBox />
       </div>
     </div>

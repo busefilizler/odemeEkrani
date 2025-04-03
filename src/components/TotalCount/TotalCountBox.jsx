@@ -28,7 +28,7 @@ export default function TotalCountBox() {
   // Mobil görünüm için özet içerik
   const MobileSummary = () => (
     <div className="flex items-center flex-col justify-between px-4 py-1 w-full">
-      <div className="pb-2">
+      <div className="pb-2 flex items-start w-full">
         <FormControlLabel
           control={
             <Checkbox
@@ -77,7 +77,7 @@ export default function TotalCountBox() {
           </Typography>
           <Typography className="!font-semibold flex justify-between" sx={{ fontSize: 16 }}>
             10.000 TL{" "}
-            {!isExpanded ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
+            {!isExpanded ? <KeyboardArrowDownIcon onClick={toggleExpand} className="cursor-pointer" /> : <KeyboardArrowUpIcon onClick={toggleExpand} className="cursor-pointer" />}
           </Typography>
         </div>
         <div>
@@ -184,7 +184,7 @@ export default function TotalCountBox() {
   // Mobil görünüm
   const MobileView = () => (
     <Card className="w-full" variant="outlined">
-      <div onClick={toggleExpand} className="cursor-pointer">
+      <div >
         <MobileSummary />
       </div>
       {isExpanded && (
@@ -211,7 +211,7 @@ export default function TotalCountBox() {
       <div className="hidden lg:block">
         <DesktopView />
       </div>
-      <div className="lg:hidden">
+      <div className="lg:hidden w-full">
         <MobileView />
       </div>
       <PrePaymentModal open={open} onClose={handleClose} />

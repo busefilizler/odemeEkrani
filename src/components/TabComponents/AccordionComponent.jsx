@@ -13,6 +13,7 @@ export default function AccordionComponent({ title, children, defaultExpanded = 
         expandIcon={<ExpandMoreIcon fontSize="large" sx={{ color: "gray" }} />}
         aria-controls={`${panelId}-content`}
         id={`${panelId}-header`}
+        sx={{ "& .MuiAccordionSummary-content": { margin: 0 } }} 
       >
         <Typography component="span" className="h-14 flex items-center px-3 !font-semibold">
           {title}
