@@ -17,7 +17,7 @@ export default function AccordionComponent({
         expandIcon={<ExpandMoreIcon fontSize="large" sx={{ color: "gray" }} />}
         aria-controls={`${panelId}-content`}
         id={`${panelId}-header`}
-        sx={{ "& .MuiAccordionSummary-content": { margin: 0 } }}
+        sx={{ "& .MuiAccordionSummary-content": { margin: 0 }, minHeight: "56px", }}
       >
         <Typography
           component="span"
