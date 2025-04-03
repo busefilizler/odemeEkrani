@@ -47,7 +47,7 @@ export default function TotalCountBox() {
         />
       }
       label={
-        <Typography sx={{ fontSize: 12 }}>
+        <Typography component="span" sx={{ fontSize: 12 }}>
           <span
             style={{
               cursor: "pointer",
@@ -117,7 +117,7 @@ export default function TotalCountBox() {
       {isExpanded && (
         <div className="border-t border-gray-200">
           <div className="px-4 py-1">
-            <Typography className="!font-normal" sx={{ fontSize: 14 }}>
+            <Typography component="div" className="!font-normal" sx={{ fontSize: 14 }}>
               <div className="flex flex-row items-center justify-between">
                 <div>Ara Toplam ({orderData.itemCount} Ürün)</div>
                 <div>{orderData.totalPrice}</div>
@@ -171,7 +171,7 @@ export default function TotalCountBox() {
           >
             Sipariş Özeti
           </Typography>
-          <Typography className="!font-normal" sx={{ fontSize: 12 }}>
+          <Typography component="div" className="!font-normal" sx={{ fontSize: 12 }}>
             <div className="flex flex-row items-center justify-between pt-3">
               <div>Sipariş Tutarı ({orderData.itemCount} Ürün)</div>
               <div>{orderData.totalPrice}</div>
