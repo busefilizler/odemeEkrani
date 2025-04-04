@@ -54,7 +54,7 @@ export default function RegisteredCards() {
         {cards.map((card) => (
           <div
             key={card.id}
-            className={`flex flex-row w-full border border-gray-200 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${selectedValue === card.id ? "bg-gray-200" : ""}`}
+            className={`flex flex-row w-full border border-gray-200 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${selectedValue === card.id ? "bg-[#E0E0E0]" : ""}`}
           >
             <Radio
               checked={selectedValue === card.id}
@@ -91,7 +91,7 @@ export default function RegisteredCards() {
         {cards.map((card) => (
           <div
             key={card.id}
-            className={`flex flex-row w-full border border-gray-200 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${selectedValue === card.id ? "bg-gray-200" : ""}`}
+            className={`flex flex-row w-full border border-gray-200 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${selectedValue === card.id ? "bg-[#E0E0E0]" : ""}`}
           >
             <Radio
               checked={selectedValue === card.id}

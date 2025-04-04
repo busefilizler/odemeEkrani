@@ -27,7 +27,7 @@ const CustomerInfo = () => {
               value={customer.customerName}
               onChange={handleChange}
               sx={{
-                backgroundColor: "rgb(244,245,245)",
+                backgroundColor: "rgb(224,224,224)",
                 borderRadius: "4px",
               }}
             />
@@ -39,7 +39,7 @@ const CustomerInfo = () => {
               value={customer.taxNumber}
               onChange={handleChange}
               sx={{
-                backgroundColor: "rgb(244,245,245)",
+                backgroundColor: "rgb(224,224,224)",
                 borderRadius: "4px",
               }}
             />
@@ -54,7 +54,7 @@ const CustomerInfo = () => {
               onChange={handleChange}
               className="w-1/2"
               sx={{
-                backgroundColor: "rgb(244,245,245)",
+                backgroundColor: "rgb(224,224,224)",
                 borderRadius: "4px",
               }}
             />
@@ -67,7 +67,7 @@ const CustomerInfo = () => {
               onChange={handleChange}
               className="w-1/2"
               sx={{
-                backgroundColor: "rgb(244,245,245)",
+                backgroundColor: "rgb(224,224,224)",
                 borderRadius: "4px",
               }}
             />

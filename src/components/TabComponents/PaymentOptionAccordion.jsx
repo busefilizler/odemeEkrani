@@ -21,10 +21,10 @@ const PaymentOptionAccordion = ({ icon, title, content }) => {
           aria-controls={`${title}-content`}
           id={`${title}-header`}
           sx={{
-            backgroundColor: "#f5f5f5",
+            backgroundColor: "#fff",
             borderRadius: 1,
             "&:hover": {
-              backgroundColor: "#e0e0e0",
+              backgroundColor: "#E0E0E0",
             },
             fontWeight: "bold",
             fontSize: "1.2rem",
