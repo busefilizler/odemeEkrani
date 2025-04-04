@@ -12,6 +12,18 @@ const PaymentOptionAccordion = ({ icon, title, content }) => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls={`${title}-content`}
           id={`${title}-header`}
+          sx={{
+            backgroundColor: "#f5f5f5",
+            borderRadius: 1,
+            "&:hover": {
+              backgroundColor: "#e0e0e0",
+            },
+            fontWeight: "bold",
+            fontSize: "1.2rem",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
         >
           {icon && <div style={{ marginRight: 8 }}>{icon}</div>}
           {title}

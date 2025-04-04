@@ -8,7 +8,6 @@ export default function RegisteredCards() {
     setSelectedValue(event.target.value);
   };
 
-  // Dummy data for registered cards
   const cards = [
     {
       id: "a",
@@ -21,7 +20,7 @@ export default function RegisteredCards() {
       id: "b",
       bankName: "Garanti Bankası Kartım",
       lastFourDigits: "1234",
-      cardHolder: "Ahmet Yılmaz",
+      cardHolder: "Ahmet Yılmaz Durkalidaroğlu",
       expirationDate: "06/2024",
     },
   ];
@@ -31,27 +30,30 @@ export default function RegisteredCards() {
       {cards.map((card) => (
         <div
           key={card.id}
-          className={`flex flex-row justify-between items-center border border-gray-200 rounded-lg p-4 mb-4 ${
+          className={`flex flex-row w-full  border border-gray-200 rounded-lg p-2 mb-4 gap-2 sm:gap-0 ${
             selectedValue === card.id ? "bg-gray-200" : ""
           }`}
         >
-          <div className="flex flex-row gap-2 items-center">
-            <Radio
-              checked={selectedValue === card.id}
-              onChange={handleChange}
-              value={card.id}
-              name="radio-buttons"
-              sx={{
-                "&.Mui-checked": {
-                  color: "black",
-                },
-              }}
-            />
-            <div>{card.bankName}</div>
+          <Radio
+            checked={selectedValue === card.id}
+            onChange={handleChange}
+            value={card.id}
+            name="radio-buttons"
+            sx={{
+              "&.Mui-checked": {
+                color: "black",
+              },
+            }}
+          />
+          <div className="flex flex-col gap-2 pl-1">
+            <div className="truncate font-semibold text-lg">
+              {card.bankName}
+            </div>
+            <div className=" flex flex-row  flex-wrap font-light text-gray-400">
+              Son 4 hane: {card.lastFourDigits} - {card.cardHolder} -{" "}
+              {card.expirationDate}
+            </div>
           </div>
-          <div>Son 4 hane: {card.lastFourDigits}</div>
-          <div>{card.cardHolder}</div>
-          <div>{card.expirationDate}</div>
         </div>
       ))}
     </div>

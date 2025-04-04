@@ -7,10 +7,8 @@ import RegisteredCards from "./RegisteredCards";
 import NewCard from "./NewCard";
 
 export default function PaymentOptions() {
-  // Kart ile ödeme seçeneği için state
   const [isPaymentMethodChanged, setIsPaymentMethodChanged] = useState(false);
 
-  // Başka bir kart ile ödeme yap'a tıklandığında metin değişecek
   const handleChangePaymentMethod = () => {
     setIsPaymentMethodChanged(!isPaymentMethodChanged);
   };
@@ -18,7 +16,7 @@ export default function PaymentOptions() {
   return (
     <div>
       <AccordionComponent title="Ödeme Seçenekleri" defaultExpanded>
-        <div className="flex flex-col gap-5 px-4 pb-1">
+        <div className="flex flex-col gap-5 px-2 pb-1">
           <PaymentOptionAccordion
             icon={<CreditCardIcon />}
             title="Kart ile Öde"
