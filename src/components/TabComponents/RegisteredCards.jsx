@@ -1,6 +1,7 @@
 import React from "react";
 import Radio from "@mui/material/Radio";
 import InstallmentOptions from "./InstallmentOptions";
+
 export default function RegisteredCards() {
   const [selectedValue, setSelectedValue] = React.useState("a");
 
@@ -45,15 +46,15 @@ export default function RegisteredCards() {
     },
   ];
 
+  const selectedCard = cards.find(card => card.id === selectedValue); // Seçili kartı alıyoruz
+
   const DeskopView = () => {
     return (
       <div className="py-4">
         {cards.map((card) => (
           <div
             key={card.id}
-            className={`flex flex-row w-full border border-gray-200 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${
-              selectedValue === card.id ? "bg-gray-200" : ""
-            }`}
+            className={`flex flex-row w-full border border-gray-200 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${selectedValue === card.id ? "bg-gray-200" : ""}`}
           >
             <Radio
               checked={selectedValue === card.id}
@@ -76,12 +77,10 @@ export default function RegisteredCards() {
               </div>
             </div>
           </div>
-         
         ))}
         <div>
-          <InstallmentOptions cards={cards} />
+          <InstallmentOptions installments={selectedCard.installments} /> {/* Seçili kartın taksitlerini geçiriyoruz */}
         </div>
-
       </div>
     );
   };
@@ -92,9 +91,7 @@ export default function RegisteredCards() {
         {cards.map((card) => (
           <div
             key={card.id}
-            className={`flex flex-row w-full border border-gray-200 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${
-              selectedValue === card.id ? "bg-gray-200" : ""
-            }`}
+            className={`flex flex-row w-full border border-gray-200 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${selectedValue === card.id ? "bg-gray-200" : ""}`}
           >
             <Radio
               checked={selectedValue === card.id}
@@ -111,12 +108,15 @@ export default function RegisteredCards() {
               <div className="truncate font-semibold text-sm">
                 {card.bankName}
               </div>
-              <div className=" flex flex-row text-xs flex-wrap font-light text-gray-400">
+              <div className="flex flex-row text-xs flex-wrap font-light text-gray-400">
                 Son 4 hane: {card.lastFourDigits}
               </div>
             </div>
           </div>
         ))}
+        <div>
+          <InstallmentOptions installments={selectedCard.installments} /> {/* Seçili kartın taksitlerini geçiriyoruz */}
+        </div>
       </div>
     );
   };
