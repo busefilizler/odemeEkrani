@@ -18,6 +18,7 @@ export default function PaymentOptions() {
       <AccordionComponent key="1" title="Ödeme Seçenekleri" defaultExpanded>
         <div className="flex flex-col gap-5 px-1 lg:px-4 pb-1">
           <PaymentOptionAccordion
+            defaultExpanded
             icon={
               <CreditCardIcon
                 sx={{

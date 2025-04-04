@@ -4,10 +4,10 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const PaymentOptionAccordion = ({ icon, title, content }) => {
+const PaymentOptionAccordion = ({ icon, title, content, defaultExpanded = false, }) => {
   return (
     <div>
-      <Accordion sx={{ borderRadius: 1 }}>
+      <Accordion defaultExpanded={defaultExpanded} sx={{ borderRadius: 1 }}>
         <AccordionSummary
           expandIcon={
             <ExpandMoreIcon

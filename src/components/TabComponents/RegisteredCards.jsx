@@ -16,6 +16,7 @@ export default function RegisteredCards() {
       lastFourDigits: "7890",
       cardHolder: "Buse Durudoğan",
       expirationDate: "01/2025",
+      moneyPonint: "1000 TL",
       installments: [
         { label: "Tek Çekim", amount: "10.000 TL", isAdvance: false },
         { label: "2 Taksit", amount: "2 x 5800,80 TL", isAdvance: false },
@@ -33,6 +34,7 @@ export default function RegisteredCards() {
       lastFourDigits: "1234",
       cardHolder: "Ahmet Yılmaz Durkalidaroğlu",
       expirationDate: "06/2024",
+      moneyPonint: "1000 TL",
       installments: [
         { label: "Tek Çekim", amount: "25.000 TL", isAdvance: false },
         { label: "2 Taksit", amount: "2 x 13.000,00 TL", isAdvance: false },
@@ -43,7 +45,7 @@ export default function RegisteredCards() {
     },
   ];
 
-  const selectedCard = cards.find((card) => card.id === selectedValue); // Seçili kartı alıyoruz
+  const selectedCard = cards.find((card) => card.id === selectedValue);
 
   const DeskopView = () => {
     return (
@@ -67,7 +69,7 @@ export default function RegisteredCards() {
               }}
             />
             <div className="flex flex-col gap-2 pl-1">
-              <div className="truncate font-semibold text-lg">
+              <div className="truncate font-semibold text-sm">
                 {card.bankName}
               </div>
               <div className="flex flex-row flex-wrap font-light text-gray-400">
@@ -79,7 +81,6 @@ export default function RegisteredCards() {
         ))}
         <div>
           <InstallmentOptions installments={selectedCard.installments} />{" "}
-          {/* Seçili kartın taksitlerini geçiriyoruz */}
         </div>
       </div>
     );

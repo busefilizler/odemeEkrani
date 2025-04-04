@@ -9,14 +9,8 @@ export default function InstallmentOptions({ installments }) {
   };
 
   return (
-    <div
-      style={{
-        border: "1px solid #e0e0e0",
-        borderRadius: "8px",
-        width: "100%",
-      }}
-    >
-      <h3 className="text-lg font-semibold mb-2 border-b p-3 border-gray-400 bg-[#E0E0E0]">
+    <div className=" rounded-lg w-full border border-[#E0E0E0]">
+      <h3 className="text-lg font-semibold p-3 bg-[#E0E0E0]">
         Taksit Seçenekleri
       </h3>
       <FormControl component="fieldset" style={{ width: "100%" }}>
@@ -32,7 +26,7 @@ export default function InstallmentOptions({ installments }) {
         >
           {installments.map((installment, index) => (
             <div
-              className="w-full flex mb-2 items-center h-full border-b border-gray-400"
+              className="w-full flex items-center h-full border-b border-gray-200 py-2 px-3 hover:bg-gray-100"
               key={index}
             >
               <Radio
