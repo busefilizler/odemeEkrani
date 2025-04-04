@@ -15,21 +15,29 @@ export default function PaymentOptions() {
 
   return (
     <div>
-      <AccordionComponent title="Ödeme Seçenekleri" defaultExpanded>
-        <div className="flex flex-col gap-5 px-2 pb-1">
+      <AccordionComponent key="1" title="Ödeme Seçenekleri" defaultExpanded>
+        <div className="flex flex-col gap-5 px-1 lg:px-4 pb-1">
           <PaymentOptionAccordion
-            icon={<CreditCardIcon />}
+            icon={
+              <CreditCardIcon
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              />
+            }
             title="Kart ile Öde"
             content={
               <div className="flex flex-col">
-                <div className="flex flex-row justify-between items-center">
-                  <div className="font-semibold">
+                <div className="flex flex-row justify-between items-center pt-2 px-1 pb-3">
+                  <div className="font-semibold text-xs md:text-base">
                     {isPaymentMethodChanged
                       ? "Kart Numarası"
                       : "Kayıtlı Kartlarım"}
                   </div>
                   <div
-                    className="underline cursor-pointer text-xs"
+                    className="underline cursor-pointer text-xs md:text-sm"
                     onClick={handleChangePaymentMethod}
                   >
                     {isPaymentMethodChanged
@@ -44,7 +52,15 @@ export default function PaymentOptions() {
           />
 
           <PaymentOptionAccordion
-            icon={<AttachMoneyIcon />}
+            icon={
+              <AttachMoneyIcon
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              />
+            }
             title="Diğer Ödeme Seçenekleri"
             content="Havale/EFT, Kapıda Ödeme gibi diğer seçenekler mevcut."
           />

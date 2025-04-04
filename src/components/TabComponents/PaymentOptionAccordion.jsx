@@ -9,7 +9,15 @@ const PaymentOptionAccordion = ({ icon, title, content }) => {
     <div>
       <Accordion sx={{ borderRadius: 1 }}>
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={
+            <ExpandMoreIcon
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            />
+          }
           aria-controls={`${title}-content`}
           id={`${title}-header`}
           sx={{
@@ -22,12 +30,15 @@ const PaymentOptionAccordion = ({ icon, title, content }) => {
             fontSize: "1.2rem",
             display: "flex",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
           }}
         >
-          {icon && <div style={{ marginRight: 8 }}>{icon}</div>}
-          {title}
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            {icon && <div>{icon}</div>}
+            <div>{title}</div>
+          </div>
         </AccordionSummary>
+
         <AccordionDetails>
           <div>{content}</div>
         </AccordionDetails>

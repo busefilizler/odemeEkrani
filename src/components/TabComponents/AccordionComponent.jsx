@@ -22,7 +22,7 @@ export default function AccordionComponent({
       >
         <Typography
           component="span"
-          className="h-14 flex items-center px-3 !font-semibold"
+          className="h-14 flex items-center px-1 lg:px-4 !font-semibold"
         >
           {title}
         </Typography>

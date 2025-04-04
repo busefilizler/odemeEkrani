@@ -16,8 +16,8 @@ const CustomerInfo = () => {
 
   return (
     <div>
-      <AccordionComponent title="Müşteri Bilgileri" defaultExpanded>
-        <div className="px-4 pb-1">
+      <AccordionComponent key="2" title="Müşteri Bilgileri" defaultExpanded>
+        <div className="px-1 lg:px-4 pb-1">
           <div className="flex flex-col gap-5">
             <TextField
               disabled
