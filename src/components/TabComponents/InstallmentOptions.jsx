@@ -43,16 +43,27 @@ export default function InstallmentOptions({ installments }) {
                   "&.Mui-checked": {
                     color: "black",
                   },
+                  "& .MuiSvgIcon-root": {
+                    fontSize: 15,
+                  },
                 }}
               />
               <div className="flex justify-between items-center w-full font-light pr-4">
-                <span style={{ flex: 1, textAlign: "left" }}>
+                <span
+                  className="flex text-left items-center h-full gap-1 text-xs md:text-sm"
+                  style={{ flex: 1 }}
+                >
                   {installment.label}{" "}
-                  <span className="font-semibold text-xs">
+                  <span className="font-semibold text-[0.5rem] md:text-xs">
                     {installment.isAdvance && " (Peşin Fiyatına)"}
                   </span>
                 </span>
-                <span style={{ textAlign: "right" }}>{installment.amount}</span>
+                <span
+                  className="text-xs md:text-sm"
+                  style={{ textAlign: "right" }}
+                >
+                  {installment.amount}
+                </span>
               </div>
             </div>
           ))}

@@ -27,7 +27,7 @@ const PaymentOptionAccordion = ({ icon, title, content }) => {
               backgroundColor: "#E0E0E0",
             },
             fontWeight: "bold",
-            fontSize: "1.2rem",
+            fontSize: "1rem",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
