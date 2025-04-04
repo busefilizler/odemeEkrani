@@ -17,23 +17,6 @@ export default function RegisteredCards() {
       cardHolder: "Buse Durudoğan",
       expirationDate: "01/2025",
       installments: [
-        { label: "Tek Çekim", amount: "10.000 TL" },
-        { label: "2 Taksit", amount: "2 x 5800,80 TL" },
-        { label: "3 Taksit(Peşin Fiyatına)", amount: "3 x 3333,33 TL" },
-        { label: "4 Taksit", amount: "4 x 2769,15 TL" },
-        { label: "6 Taksit(Peşin Fiyatına)", amount: "6 x 1666,66 TL" },
-        { label: "12 Taksit", amount: "8 x 1378,65 TL" },
-        { label: "18 Taksit", amount: "9 x 1176,64 TL" },
-        { label: "24 Taksit", amount: "12 x 987,55 TL" },
-      ],
-    },
-    {
-      id: "b",
-      bankName: "Garanti Bankası Kartım",
-      lastFourDigits: "1234",
-      cardHolder: "Ahmet Yılmaz Durkalidaroğlu",
-      expirationDate: "06/2024",
-      installments: [
         { label: "Tek Çekim", amount: "10.000 TL", isAdvance: false },
         { label: "2 Taksit", amount: "2 x 5800,80 TL", isAdvance: false },
         { label: "3 Taksit", amount: "3 x 3333,33 TL", isAdvance: true },
@@ -44,9 +27,23 @@ export default function RegisteredCards() {
         { label: "24 Taksit", amount: "12 x 987,55 TL", isAdvance: false },
       ],
     },
+    {
+      id: "b",
+      bankName: "Garanti Bankası Kartım",
+      lastFourDigits: "1234",
+      cardHolder: "Ahmet Yılmaz Durkalidaroğlu",
+      expirationDate: "06/2024",
+      installments: [
+        { label: "Tek Çekim", amount: "25.000 TL", isAdvance: false },
+        { label: "2 Taksit", amount: "2 x 13.000,00 TL", isAdvance: false },
+        { label: "3 Taksit", amount: "3 x 8.500,00 TL", isAdvance: true },
+        { label: "4 Taksit", amount: "4 x 6.500,00 TL", isAdvance: false },
+        { label: "6 Taksit", amount: "6 x 4.200,00 TL", isAdvance: true },
+      ],
+    },
   ];
 
-  const selectedCard = cards.find(card => card.id === selectedValue); // Seçili kartı alıyoruz
+  const selectedCard = cards.find((card) => card.id === selectedValue); // Seçili kartı alıyoruz
 
   const DeskopView = () => {
     return (
@@ -54,7 +51,9 @@ export default function RegisteredCards() {
         {cards.map((card) => (
           <div
             key={card.id}
-            className={`flex flex-row w-full border border-gray-200 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${selectedValue === card.id ? "bg-[#E0E0E0]" : ""}`}
+            className={`flex flex-row w-full border border-gray-200 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${
+              selectedValue === card.id ? "bg-[#f5f1f1]" : ""
+            }`}
           >
             <Radio
               checked={selectedValue === card.id}
@@ -79,7 +78,8 @@ export default function RegisteredCards() {
           </div>
         ))}
         <div>
-          <InstallmentOptions installments={selectedCard.installments} /> {/* Seçili kartın taksitlerini geçiriyoruz */}
+          <InstallmentOptions installments={selectedCard.installments} />{" "}
+          {/* Seçili kartın taksitlerini geçiriyoruz */}
         </div>
       </div>
     );
@@ -91,7 +91,9 @@ export default function RegisteredCards() {
         {cards.map((card) => (
           <div
             key={card.id}
-            className={`flex flex-row w-full border border-gray-200 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${selectedValue === card.id ? "bg-[#E0E0E0]" : ""}`}
+            className={`flex flex-row w-full border border-gray-200 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${
+              selectedValue === card.id ? "bg-[#f5f1f1]" : ""
+            }`}
           >
             <Radio
               checked={selectedValue === card.id}
@@ -115,7 +117,8 @@ export default function RegisteredCards() {
           </div>
         ))}
         <div>
-          <InstallmentOptions installments={selectedCard.installments} /> {/* Seçili kartın taksitlerini geçiriyoruz */}
+          <InstallmentOptions installments={selectedCard.installments} />{" "}
+          {/* Seçili kartın taksitlerini geçiriyoruz */}
         </div>
       </div>
     );

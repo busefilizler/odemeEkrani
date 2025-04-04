@@ -11,43 +11,46 @@ export default function InstallmentOptions({ installments }) {
   return (
     <div
       style={{
-        padding: "16px",
         border: "1px solid #e0e0e0",
         borderRadius: "8px",
         width: "100%",
       }}
     >
-      <h3 className="text-lg font-semibold mb-2">Taksit Seçenekleri</h3>
+      <h3 className="text-lg font-semibold mb-2 border-b p-3 border-gray-400 bg-[#E0E0E0]">
+        Taksit Seçenekleri
+      </h3>
       <FormControl component="fieldset" style={{ width: "100%" }}>
         <RadioGroup
           value={selectedInstallment}
           onChange={handleChange}
           style={{ width: "100%" }}
+          sx={{
+            "&.Mui-checked": {
+              color: "black",
+            },
+          }}
         >
           {installments.map((installment, index) => (
             <div
+              className="w-full flex mb-2 items-center h-full border-b border-gray-400"
               key={index}
-              style={{
-                width: "100%",
-                display: "flex",
-                alignItems: "center",
-                marginBottom: "8px",
-              }}
             >
               <Radio
                 value={installment.label}
                 checked={selectedInstallment === installment.label}
                 onChange={handleChange}
-              />
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  width: "100%",
+                sx={{
+                  "&.Mui-checked": {
+                    color: "black",
+                  },
                 }}
-              >
+              />
+              <div className="flex justify-between items-center w-full font-light pr-4">
                 <span style={{ flex: 1, textAlign: "left" }}>
-                  {installment.label}
+                  {installment.label}{" "}
+                  <span className="font-semibold text-xs">
+                    {installment.isAdvance && " (Peşin Fiyatına)"}
+                  </span>
                 </span>
                 <span style={{ textAlign: "right" }}>{installment.amount}</span>
               </div>
