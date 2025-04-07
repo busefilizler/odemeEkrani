@@ -1,5 +1,6 @@
 import React from "react";
 import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
+import { deepPurple } from "@mui/material/colors";
 
 export default function ProgressBar({ steps }) {
   return (
@@ -8,11 +9,11 @@ export default function ProgressBar({ steps }) {
         <React.Fragment key={index}>
           <div
             className={`flex flex-row gap-1 items-center w-fit ${
-              step?.disabled ? "text-gray-400" : "text-black"
+              step?.disabled ? "text-gray-400" : "text-[#673ab7]"
             }`}
           >
             <CheckCircleOutlineOutlinedIcon
-              sx={{ color: step?.disabled ? "gray" : "black" }}
+              sx={{ color: step?.disabled ? "gray" : deepPurple[500] }}
             />
             <div className="text-xs sm:text-sm md:text-base">{step?.label}</div>
           </div>

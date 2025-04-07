@@ -5,6 +5,7 @@ import CreditCardIcon from "@mui/icons-material/CreditCard";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import RegisteredCards from "./RegisteredCards";
 import NewCard from "./NewCard";
+import { deepPurple } from "@mui/material/colors";
 
 export default function PaymentOptions() {
   const [isPaymentMethodChanged, setIsPaymentMethodChanged] = useState(false);
@@ -25,6 +26,7 @@ export default function PaymentOptions() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  color: deepPurple[500],
                 }}
               />
             }
@@ -59,6 +61,7 @@ export default function PaymentOptions() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  color: deepPurple[500],
                 }}
               />
             }

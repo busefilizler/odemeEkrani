@@ -11,6 +11,7 @@ import Stack from "@mui/material/Stack";
 import PrePaymentModal from "../Modals/PrePaymentModal";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { deepPurple } from "@mui/material/colors";
 
 const orderData = {
   totalPrice: "10.000 TL",
@@ -36,8 +37,8 @@ export default function TotalCountBox() {
       control={
         <Checkbox
           sx={{
-            color: "black",
-            "&.Mui-checked": { color: "black" },
+            color: deepPurple[500],
+            "&.Mui-checked": { color: deepPurple[500] },
             opacity: isChecked ? 1 : 0.5,
             transition: "opacity 0.3s",
           }}
@@ -52,7 +53,7 @@ export default function TotalCountBox() {
             style={{
               cursor: "pointer",
               textDecoration: "underline",
-              color: "black",
+              color: deepPurple[500],
             }}
             onClick={handleOpen}
           >
@@ -107,7 +108,7 @@ export default function TotalCountBox() {
               variant="contained"
               disabled={!isChecked}
               className="!w-full"
-              sx={{ backgroundColor: "black" }}
+              sx={{ backgroundColor: deepPurple[500] }}
             >
               Ödeme Yap
             </Button>
@@ -154,7 +155,7 @@ export default function TotalCountBox() {
               variant="contained"
               disabled={!isChecked}
               className="!w-full"
-              sx={{ width: "100%", backgroundColor: "black" }}
+              sx={{ width: "100%", backgroundColor: deepPurple[500] }}
             >
               Ödeme Yap
             </Button>

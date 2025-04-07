@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Button, Box } from "@mui/material";
 import Modal from "./Modal";
-
+import { deepPurple } from "@mui/material/colors";
 const PrePaymentModal = ({ open, onClose }) => {
   return (
     <Modal open={open} onClose={onClose}>
@@ -21,9 +21,9 @@ const PrePaymentModal = ({ open, onClose }) => {
           variant="contained"
           onClick={onClose}
           sx={{
-            backgroundColor: "black",
+            backgroundColor: deepPurple[500],
             "&:hover": {
-              backgroundColor: "black",
+              backgroundColor: deepPurple[500],
             },
           }}
         >

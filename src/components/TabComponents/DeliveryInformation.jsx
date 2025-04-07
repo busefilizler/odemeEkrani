@@ -25,7 +25,7 @@ export default function DeliveryInformation() {
         <div className="flex flex-col gap-6 px-1 lg:px-4">
           {[deliveryInfo.shipping, deliveryInfo.billing].map((info) => (
             <div key={info.title} className="flex flex-col gap-1">
-              <div className="font-semibold text-sm text-black pb-2">
+              <div className="font-semibold text-sm pb-2">
                 {info.title}
               </div>
               <div className="flex flex-col gap-1 text-sm text-gray-400">

@@ -1,6 +1,7 @@
 import React from "react";
 import Radio from "@mui/material/Radio";
 import InstallmentOptions from "./InstallmentOptions";
+import { deepPurple } from "@mui/material/colors";
 
 export default function RegisteredCards() {
   const [selectedValue, setSelectedValue] = React.useState("a");
@@ -16,7 +17,7 @@ export default function RegisteredCards() {
       lastFourDigits: "7890",
       cardHolder: "Buse Durudoğan",
       expirationDate: "01/2025",
-      moneyPoint: "1000 TL",
+      moneyPoint: "1.000 TL",
       installments: [
         { label: "Tek Çekim", amount: "10.000 TL", isAdvance: false },
         { label: "2 Taksit", amount: "2 x 5800,80 TL", isAdvance: false },
@@ -34,7 +35,7 @@ export default function RegisteredCards() {
       lastFourDigits: "1234",
       cardHolder: "Ahmet Yılmaz Durkalidaroğlu",
       expirationDate: "06/2024",
-      moneyPoint: "1000 TL",
+      moneyPoint: "300 TL",
       installments: [
         { label: "Tek Çekim", amount: "25.000 TL", isAdvance: false },
         { label: "2 Taksit", amount: "2 x 13.000,00 TL", isAdvance: false },
@@ -64,7 +65,7 @@ export default function RegisteredCards() {
               name="radio-buttons"
               sx={{
                 "&.Mui-checked": {
-                  color: "black",
+                  color: deepPurple[500],
                 },
               }}
             />
@@ -103,7 +104,7 @@ export default function RegisteredCards() {
               name="radio-buttons"
               sx={{
                 "&.Mui-checked": {
-                  color: "black",
+                  color: deepPurple[500],
                 },
               }}
             />

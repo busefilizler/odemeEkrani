@@ -6,20 +6,21 @@ import "../../i18n.js";
 import { useTranslation } from "react-i18next";
 import { Select, MenuItem } from "@mui/material";
 import { US, TR } from "country-flag-icons/react/3x2";
+import { deepPurple } from "@mui/material/colors";
 
 export default function Header() {
   const { i18n } = useTranslation();
   const changeLanguage = (event) => i18n.changeLanguage(event.target.value);
 
   return (
-    <div className="flex items-center justify-between bg-black lg:bg-white h-20 px-4 lg:px-8 text-white lg:text-black border-b-2 border-gray-300">
+    <div className="flex items-center justify-between bg-[#673ab7] lg:bg-white h-20 px-4 lg:px-8 text-white lg:text-[#673ab7] border-b-2 border-gray-300">
       {/* Logo */}
       <img src={payMedBlack} alt="logo" className="w-16 lg:hidden" />
       <img src={payMedLogo} alt="logo" className="hidden lg:block w-30" />
 
       {/* Güvenli Ödeme */}
       <div className="flex items-center space-x-1">
-        <GppGoodOutlinedIcon fontSize="medium" sx={{ color: "green" }} />
+        <GppGoodOutlinedIcon fontSize="medium" sx={{ color: "deepPurple" }} />
         <span className="text-sm lg:text-xl font-semibold">Güvenli Ödeme</span>
       </div>
 
@@ -39,17 +40,17 @@ export default function Header() {
           "& .MuiSelect-icon": { color: "white" },
           "@media (min-width: 1024px)": {
             backgroundColor: "white",
-            color: "black",
+            color: deepPurple[500],
             "& .MuiOutlinedInput-notchedOutline": { borderColor: "gray" },
             "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor: "black",
+              borderColor: deepPurple[500],
             },
             "& .MuiSelect-icon": { color: "gray" },
             "& .MuiSelect-select": {
               display: "flex",
               alignItems: "center",
               gap: 1,
-              color: "black",
+              color: deepPurple[500],
             },
           },
         }}

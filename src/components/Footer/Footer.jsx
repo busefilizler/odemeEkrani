@@ -15,7 +15,7 @@ const TotalCount = () => {
 
 const Footers = ()  => {
   return (
-    <div className="bg-black text-white h-20 items-center flex justify-between 
+    <div className="bg-[#673ab7] text-white h-20 items-center flex justify-between 
     px-10 lg:px-20 
      w-full">
       <div className="lg:flex hidden">Tüm haklar Saklıdır Copyright © 2025</div>
