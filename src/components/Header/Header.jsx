@@ -13,7 +13,7 @@ export default function Header() {
   const changeLanguage = (event) => i18n.changeLanguage(event.target.value);
 
   return (
-    <div className="flex items-center justify-between bg-[#673ab7] lg:bg-white h-20 px-4 lg:px-8 text-white lg:text-[#673ab7] border-b-2 border-gray-300">
+    <div className="flex items-center justify-between bg-[#673ab7] lg:bg-white h-20 px-4 lg:px-8 text-white lg:text-black border-b-2 border-gray-300">
       {/* Logo */}
       <img src={payMedBlack} alt="logo" className="w-16 lg:hidden" />
       <img src={payMedLogo} alt="logo" className="hidden lg:block w-30" />

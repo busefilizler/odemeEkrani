@@ -40,7 +40,7 @@ export default function PaymentOptions() {
                       : "Kayıtlı Kartlarım"}
                   </div>
                   <div
-                    className="underline cursor-pointer text-xs md:text-sm"
+                    className="underline text-[#673ab7] cursor-pointer text-xs md:text-sm"
                     onClick={handleChangePaymentMethod}
                   >
                     {isPaymentMethodChanged
