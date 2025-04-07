@@ -1,18 +1,26 @@
 import React, { useState } from "react";
 import { Radio, FormControl, RadioGroup, Checkbox } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
+import PrePaymentModal from "../Modals/PrePaymentModal";
 
 export default function InstallmentOptions({ installments, moneyPoint }) {
   const [selectedInstallment, setSelectedInstallment] = useState("");
   const [useMoneyPoint, setUseMoneyPoint] = useState(false);
+  const [use3DSecure, setUse3DSecure] = useState(false);
 
   const handleChange = (event) => {
     setSelectedInstallment(event.target.value);
   };
-
+  const handle3DSecureChange = (event) => {
+    setUse3DSecure(event.target.checked);
+  };
   const handleMoneyPointChange = (event) => {
     setUseMoneyPoint(event.target.checked);
   };
+  const [open, setOpen] = useState(false);
+  const handleClose = () => setOpen(false);
+
+  const handleOpen = () => setOpen(true);
 
   return (
     <>
@@ -89,6 +97,65 @@ export default function InstallmentOptions({ installments, moneyPoint }) {
           Kullan!
         </span>
       </div>
+
+      <div className="w-full mt-3 p-2 flex items-center gap-2">
+        <Checkbox
+          checked={use3DSecure}
+          onChange={handle3DSecureChange}
+          sx={{
+            padding: 0,
+            "& .MuiSvgIcon-root": { fontSize: 18 },
+            "&.Mui-checked": {
+              color: deepPurple[600],
+            },
+          }}
+        />
+        <div>3D Secure ile güvenli alışveriş yapın. </div>
+      </div>
+
+      <div className="w-full p-2 flex items-start justify-items-start gap-2">
+        <Checkbox
+          checked={use3DSecure}
+          onChange={handle3DSecureChange}
+          sx={{
+            padding: 0,
+            "& .MuiSvgIcon-root": { fontSize: 18 },
+            "&.Mui-checked": {
+              color: deepPurple[600],
+            },
+          }}
+        />
+        <div className="-mt-1">
+          <span className="cursor-pointer text-[#673ab7] h-full" onClick={handleOpen}>
+            Aydınlatma metinini
+          </span>{" "}
+          okudum ve onaylıyorum. Kartımı{" "}
+          <span className="font-semibold h-full">PayMed Teknoloji AŞ.</span> altyapısına
+          kaydetmek istiyorum.
+        </div>
+      </div>
+      <div className="w-full p-2 flex items-start justify-items-start gap-2">
+        <Checkbox
+          checked={use3DSecure}
+          onChange={handle3DSecureChange}
+          sx={{
+            padding: 0,
+            "& .MuiSvgIcon-root": { fontSize: 18 },
+            "&.Mui-checked": {
+              color: deepPurple[600],
+            },
+          }}
+        />
+        <div className="-mt-1">
+          <span className="cursor-pointer text-[#673ab7] h-full" onClick={handleOpen}>
+            Kullanım Koşullarını
+          </span>{" "}
+          okudum. Kartımı{" "}
+          <span className="font-semibold h-full">MasterPass'e</span>
+          kaydetmek istiyorum.
+        </div>
+      </div>
+      <PrePaymentModal open={open} onClose={handleClose} />
     </>
   );
 }
