@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { Radio, FormControl, RadioGroup } from "@mui/material";
+import Checkbox from "@mui/material/Checkbox";
 
-export default function InstallmentOptions({ installments }) {
+export default function InstallmentOptions({ installments, moneyPoint }) {
   const [selectedInstallment, setSelectedInstallment] = useState("");
-
+console.log("installments", installments);
   const handleChange = (event) => {
     setSelectedInstallment(event.target.value);
   };
 
   return (
-    <div className=" rounded-lg w-full border border-[#E0E0E0]">
+    <>
+    <div className="rounded-lg w-full border border-[#E0E0E0]">
       <h3 className="text-lg font-semibold p-3 bg-[#E0E0E0]">
         Taksit Seçenekleri
       </h3>
@@ -64,5 +66,9 @@ export default function InstallmentOptions({ installments }) {
         </RadioGroup>
       </FormControl>
     </div>
+      <div className="rounded-lg w-full border border-[#E0E0E0] bg-blue-100 mt-3 p-1">
+        {moneyPoint}
+      </div>
+      </>
   );
 }

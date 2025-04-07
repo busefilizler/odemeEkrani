@@ -16,7 +16,7 @@ export default function RegisteredCards() {
       lastFourDigits: "7890",
       cardHolder: "Buse Durudoğan",
       expirationDate: "01/2025",
-      moneyPonint: "1000 TL",
+      moneyPoint: "1000 TL",
       installments: [
         { label: "Tek Çekim", amount: "10.000 TL", isAdvance: false },
         { label: "2 Taksit", amount: "2 x 5800,80 TL", isAdvance: false },
@@ -34,7 +34,7 @@ export default function RegisteredCards() {
       lastFourDigits: "1234",
       cardHolder: "Ahmet Yılmaz Durkalidaroğlu",
       expirationDate: "06/2024",
-      moneyPonint: "1000 TL",
+      moneyPoint: "1000 TL",
       installments: [
         { label: "Tek Çekim", amount: "25.000 TL", isAdvance: false },
         { label: "2 Taksit", amount: "2 x 13.000,00 TL", isAdvance: false },
@@ -80,7 +80,7 @@ export default function RegisteredCards() {
           </div>
         ))}
         <div>
-          <InstallmentOptions installments={selectedCard.installments} />{" "}
+          <InstallmentOptions installments={selectedCard.installments} moneyPoint={selectedCard.moneyPoint} />{" "}
         </div>
       </div>
     );
