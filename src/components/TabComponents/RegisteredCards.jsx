@@ -120,7 +120,6 @@ export default function RegisteredCards() {
         ))}
         <div>
           <InstallmentOptions installments={selectedCard.installments} />{" "}
-          {/* Seçili kartın taksitlerini geçiriyoruz */}
         </div>
       </div>
     );
