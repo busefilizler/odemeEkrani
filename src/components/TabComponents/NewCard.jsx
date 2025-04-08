@@ -1,28 +1,40 @@
 import React, { useState } from "react";
 import { TextField } from "@mui/material";
-import masterCard from "../../../public/masterCard.png";
 import { deepPurple } from "@mui/material/colors";
-function formatCardNumber(value) {
-  const numbersOnly = value.replace(/\D/g, "").slice(0, 16);
-  const parts = numbersOnly.match(/.{1,4}/g) || [];
-  return parts.join(" ");
-}
+import masterCard from "../../../public/masterCard.png";
 
-function maskCardNumber(value) {
-  const numbersOnly = value.replace(/\D/g, "").padEnd(16, "X");
-  return `${numbersOnly.slice(0, 4)} ${numbersOnly.slice(
-    4,
-    6
-  )}** **** ${numbersOnly.slice(12, 16)}`;
-}
+const inputStyles = {
+  "& .MuiOutlinedInput-root": {
+    "&.Mui-focused fieldset": {
+      borderColor: deepPurple[500],
+    },
+  },
+};
 
-function formatExpiry(value) {
-  const numbersOnly = value.replace(/\D/g, "").slice(0, 4);
-  if (numbersOnly.length < 3) {
-    return numbersOnly;
-  }
-  return `${numbersOnly.slice(0, 2)}/${numbersOnly.slice(2)}`;
-}
+const StyledTextField = ({ label, ...props }) => (
+  <div className="flex-1">
+    {label && <label className="font-semibold">{label}</label>}
+    <TextField
+      fullWidth
+      variant="outlined"
+      sx={{ marginTop: label ? "15px" : 0, ...inputStyles }}
+      {...props}
+    />
+  </div>
+);
+
+const formatCardNumber = (value) =>
+  (value.replace(/\D/g, "").slice(0, 16).match(/.{1,4}/g) || []).join(" ");
+
+const maskCardNumber = (value) => {
+  const n = value.replace(/\D/g, "").padEnd(16, "X");
+  return `${n.slice(0, 4)} ${n.slice(4, 6)}** **** ${n.slice(12)}`;
+};
+
+const formatExpiry = (value) => {
+  const n = value.replace(/\D/g, "").slice(0, 4);
+  return n.length < 3 ? n : `${n.slice(0, 2)}/${n.slice(2)}`;
+};
 
 export default function NewCard() {
   const [cardNumber, setCardNumber] = useState("");
@@ -30,100 +42,42 @@ export default function NewCard() {
   const [expiry, setExpiry] = useState("");
   const [cvc, setCvc] = useState("");
 
-  const handleCardNumberChange = (e) => {
-    const formatted = formatCardNumber(e.target.value);
-    setCardNumber(formatted);
-  };
-
-  const handleExpiryChange = (e) => {
-    const formatted = formatExpiry(e.target.value);
-    setExpiry(formatted);
-  };
-
   return (
-    <div className="flex flex-col md:flex-row gap-6  py-1">
+    <div className="flex flex-col md:flex-row gap-6 py-1">
       <div className="flex flex-col gap-4 flex-1">
         <div className="relative">
           <div className="absolute h-full w-2 bg-[#673ab7] rounded-l-md top-0 left-0"></div>
-          <TextField
-            fullWidth
-            variant="outlined"
+          <StyledTextField
             placeholder="XXXX  XXXX  XXXX  XXXX"
             value={cardNumber}
-            onChange={handleCardNumberChange}
-            sx={{
-              "& .MuiOutlinedInput-root": {
-                "&.Mui-focused fieldset": {
-                  borderColor: deepPurple[500],
-                },
-              },
-            }}
-            inputProps={{
-              maxLength: 19,
-            }}
-            InputProps={{
-              sx: { pl: "16px" },
-            }}
+            onChange={(e) => setCardNumber(formatCardNumber(e.target.value))}
+            inputProps={{ maxLength: 19 }}
+            InputProps={{ sx: { pl: "16px" } }}
           />
         </div>
 
-        <label className="font-semibold">Kart Sahibi</label>
-        <TextField
-          fullWidth
+        <StyledTextField
+          label="Kart Sahibi"
           placeholder="Kart Sahibinin Adı ve Soyadı"
           value={cardHolder}
-          sx={{
-            "& .MuiOutlinedInput-root": {
-              "&.Mui-focused fieldset": {
-                borderColor: deepPurple[500],
-              },
-            },
-          }}
           onChange={(e) => setCardHolder(e.target.value)}
         />
 
         <div className="flex gap-4">
-          <div className="flex-1">
-            <label className="font-semibold">Son Kullanma Tarihi</label>
-            <TextField
-              fullWidth
-              placeholder="Ay/Yıl"
-              value={expiry}
-              onChange={handleExpiryChange}
-              sx={{
-                marginTop: "15px",
-                "& .MuiOutlinedInput-root": {
-                  "&.Mui-focused fieldset": {
-                    borderColor: deepPurple[500],
-                  },
-                },
-              }}
-              inputProps={{
-                maxLength: 5,
-              }}
-            />
-          </div>
-          <div className="flex-1">
-            <label className="font-semibold">Güvenlik Kodu</label>
-            <TextField
-              fullWidth
-              placeholder="CVC"
-              value={cvc}
-              maxLength={3}
-              sx={{
-                marginTop: "15px",
-                "& .MuiOutlinedInput-root": {
-                  "&.Mui-focused fieldset": {
-                    borderColor: deepPurple[500],
-                  },
-                },
-              }}
-              inputProps={{
-                maxLength: 3,
-              }}
-              onChange={(e) => setCvc(e.target.value)}
-            />
-          </div>
+          <StyledTextField
+            label="Son Kullanma Tarihi"
+            placeholder="Ay/Yıl"
+            value={expiry}
+            onChange={(e) => setExpiry(formatExpiry(e.target.value))}
+            inputProps={{ maxLength: 5 }}
+          />
+          <StyledTextField
+            label="Güvenlik Kodu"
+            placeholder="CVC"
+            value={cvc}
+            onChange={(e) => setCvc(e.target.value)}
+            inputProps={{ maxLength: 3 }}
+          />
         </div>
       </div>
 
