@@ -17,16 +17,56 @@ export default function RegisteredCards() {
       lastFourDigits: "7890",
       cardHolder: "Buse Durudoğan",
       expirationDate: "01/2025",
-      moneyPoint: "1.000 TL",
+      moneyPoint: "1000",
       installments: [
-        { label: "Tek Çekim", amount: "10.000 TL", isAdvance: false },
-        { label: "2 Taksit", amount: "2 x 5800,80 TL", isAdvance: false },
-        { label: "3 Taksit", amount: "3 x 3333,33 TL", isAdvance: true },
-        { label: "4 Taksit", amount: "4 x 2769,15 TL", isAdvance: false },
-        { label: "6 Taksit", amount: "6 x 1666,66 TL", isAdvance: true },
-        { label: "12 Taksit", amount: "8 x 1378,65 TL", isAdvance: false },
-        { label: "18 Taksit", amount: "9 x 1176,64 TL", isAdvance: false },
-        { label: "24 Taksit", amount: "12 x 987,55 TL", isAdvance: false },
+        {
+          label: "Tek Çekim",
+          installment: 1,
+          amount: "10000",
+          isAdvance: false,
+        },
+        {
+          label: "2 Taksit",
+          installment: 2,
+          amount: "5800.80",
+          isAdvance: false,
+        },
+        {
+          label: "3 Taksit",
+          installment: 3,
+          amount: "3333.33",
+          isAdvance: true,
+        },
+        {
+          label: "4 Taksit",
+          installment: 4,
+          amount: "2769.15",
+          isAdvance: false,
+        },
+        {
+          label: "6 Taksit",
+          installment: 6,
+          amount: "1666.66",
+          isAdvance: true,
+        },
+        {
+          label: "12 Taksit",
+          installment: 12,
+          amount: "1378.65",
+          isAdvance: false,
+        },
+        {
+          label: "18 Taksit",
+          installment: 18,
+          amount: "1176.64",
+          isAdvance: false,
+        },
+        {
+          label: "24 Taksit",
+          installment: 24,
+          amount: "987.55",
+          isAdvance: false,
+        },
       ],
     },
     {
@@ -35,19 +75,43 @@ export default function RegisteredCards() {
       lastFourDigits: "1234",
       cardHolder: "Ahmet Yılmaz Durkalidaroğlu",
       expirationDate: "06/2024",
-      moneyPoint: "300 TL",
+      moneyPoint: "300",
       installments: [
-        { label: "Tek Çekim", amount: "25.000 TL", isAdvance: false },
-        { label: "2 Taksit", amount: "2 x 13.000,00 TL", isAdvance: false },
-        { label: "3 Taksit", amount: "3 x 8.500,00 TL", isAdvance: true },
-        { label: "4 Taksit", amount: "4 x 6.500,00 TL", isAdvance: false },
-        { label: "6 Taksit", amount: "6 x 4.200,00 TL", isAdvance: true },
+        {
+          label: "Tek Çekim",
+          installment: 1,
+          amount: "25000",
+          isAdvance: false,
+        },
+        {
+          label: "2 Taksit",
+          installment: 2,
+          amount: "13000.00",
+          isAdvance: false,
+        },
+        {
+          label: "3 Taksit",
+          installment: 3,
+          amount: "8500.00",
+          isAdvance: true,
+        },
+        {
+          label: "4 Taksit",
+          installment: 4,
+          amount: "6500.00",
+          isAdvance: false,
+        },
+        {
+          label: "6 Taksit",
+          installment: 6,
+          amount: "4200.00",
+          isAdvance: true,
+        },
       ],
     },
   ];
 
   const selectedCard = cards.find((card) => card.id === selectedValue);
-
   const DeskopView = () => {
     return (
       <div className="py-4">
@@ -81,7 +145,10 @@ export default function RegisteredCards() {
           </div>
         ))}
         <div>
-          <InstallmentOptions installments={selectedCard.installments} moneyPoint={selectedCard.moneyPoint} />{" "}
+          <InstallmentOptions
+            installments={selectedCard.installments}
+            moneyPoint={selectedCard.moneyPoint}
+          />{" "}
         </div>
       </div>
     );
@@ -119,7 +186,10 @@ export default function RegisteredCards() {
           </div>
         ))}
         <div>
-          <InstallmentOptions installments={selectedCard.installments} />{" "}
+          <InstallmentOptions
+            installments={selectedCard.installments}
+            moneyPoint={selectedCard.moneyPoint}
+          />{" "}
         </div>
       </div>
     );

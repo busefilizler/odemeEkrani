@@ -14,14 +14,36 @@ const inputStyles = {
 const cards = {
   moneyPoint: "1.000 TL",
   installments: [
-    { label: "Tek Çekim", amount: "10.000 TL", isAdvance: false },
-    { label: "2 Taksit", amount: "2 x 5800,80 TL", isAdvance: false },
-    { label: "3 Taksit", amount: "3 x 3333,33 TL", isAdvance: true },
-    { label: "4 Taksit", amount: "4 x 2769,15 TL", isAdvance: false },
-    { label: "6 Taksit", amount: "6 x 1666,66 TL", isAdvance: true },
-    { label: "12 Taksit", amount: "8 x 1378,65 TL", isAdvance: false },
-    { label: "18 Taksit", amount: "9 x 1176,64 TL", isAdvance: false },
-    { label: "24 Taksit", amount: "12 x 987,55 TL", isAdvance: false },
+    {
+      label: "Tek Çekim",
+      installment: 1,
+      amount: "25000",
+      isAdvance: false,
+    },
+    {
+      label: "2 Taksit",
+      installment: 2,
+      amount: "13000.00",
+      isAdvance: false,
+    },
+    {
+      label: "3 Taksit",
+      installment: 3,
+      amount: "8500.00",
+      isAdvance: true,
+    },
+    {
+      label: "4 Taksit",
+      installment: 4,
+      amount: "6500.00",
+      isAdvance: false,
+    },
+    {
+      label: "6 Taksit",
+      installment: 6,
+      amount: "4200.00",
+      isAdvance: true,
+    },
   ],
 };
 const StyledTextField = ({ label, ...props }) => (
@@ -100,7 +122,7 @@ export default function NewCard() {
           </div>
         </div>
 
-        <div className="flex-1 px-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-2xl shadow-lg p-3 h-48 relative overflow-hidden">
+        <div className="lg:block hidden flex-1 px-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-2xl shadow-lg p-3 h-48 relative overflow-hidden">
           <img
             src={masterCard}
             alt="MasterCard"

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Radio, FormControl, RadioGroup, Checkbox } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
 import PrePaymentModal from "../Modals/PrePaymentModal";
-
+import { formatAmount } from "../../utils/AmountFormat.js";
 export default function InstallmentOptions({ installments, moneyPoint }) {
   const [selectedInstallment, setSelectedInstallment] = useState("");
   const [useMoneyPoint, setUseMoneyPoint] = useState(false);
@@ -27,9 +27,7 @@ export default function InstallmentOptions({ installments, moneyPoint }) {
     <>
       <div className="rounded-lg w-full border border-[#E0E0E0]">
         <div className="flex flex-row w-full justify-between items-center bg-[#E0E0E0]">
-          <div className="text-lg font-semibold p-3 ">
-            Taksit Seçenekleri
-          </div>
+          <div className="text-lg font-semibold p-3 ">Taksit Seçenekleri</div>
           {installments.length > 3 && (
             <div
               className="text-center cursor-pointer text-[#673ab7] pr-3"
@@ -49,7 +47,7 @@ export default function InstallmentOptions({ installments, moneyPoint }) {
             {visibleInstallments.map((installment, index) => (
               <div
                 key={index}
-                className="w-full flex items-center border-b border-gray-200 py-2 px-3 hover:bg-gray-100"
+                className="w-full flex items-center border-b border-gray-200 py-2 pr-3 hover:bg-gray-100"
               >
                 <Radio
                   value={installment.label}
@@ -70,7 +68,7 @@ export default function InstallmentOptions({ installments, moneyPoint }) {
                     )}
                   </span>
                   <span className="text-xs md:text-sm text-right">
-                    {installment.amount}
+                  {installment.installment} x{""} {formatAmount(installment.amount)}
                   </span>
                 </div>
               </div>
@@ -79,15 +77,16 @@ export default function InstallmentOptions({ installments, moneyPoint }) {
         </FormControl>
       </div>
 
-      <div className="rounded-lg w-full border border-[#E0E0E0] bg-blue-100 mt-3 p-2 flex items-center gap-2">
+      <div className="rounded-lg w-full border border-[#E0E0E0] bg-blue-100 mt-3 p-2 flex items-center justify-center gap-2">
         <Checkbox
           checked={useMoneyPoint}
           onChange={handleChange(setUseMoneyPoint)}
           sx={checkboxSx}
         />
-        <span className="text-sm font-semibold">
-          <span className="text-[#673ab7]">{moneyPoint}</span> ParaPuan Kullan!
-        </span>
+        <div className="text-sm font-semibold flex flex-row w-full h-full gap-x-1">
+          <div className="text-[#673ab7]">{formatAmount(moneyPoint)} TL</div>
+          <div>ParaPuan Kullan!</div>
+        </div>
       </div>
 
       <div className="w-full text-sm mt-3 p-2 flex items-center gap-2">
