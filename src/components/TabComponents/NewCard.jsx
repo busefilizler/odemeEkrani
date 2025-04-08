@@ -84,8 +84,8 @@ export default function NewCard() {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row gap-6 py-1">
-        <div className="flex flex-col gap-4 flex-1">
+      <div className="flex flex-col justify-between md:flex-row gap-6 py-1">
+        <div className="flex flex-col gap-4 flex-1 min-w-86">
           <div className="relative">
             <div className="absolute h-full w-2 bg-[#673ab7] rounded-l-md top-0 left-0"></div>
             <StyledTextField
@@ -122,7 +122,7 @@ export default function NewCard() {
           </div>
         </div>
 
-        <div className="lg:block hidden flex-1 px-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-2xl shadow-lg p-3 h-48 relative overflow-hidden">
+        <div className="lg:block hidden px-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-2xl shadow-lg p-3  w-82 h-48 relative overflow-hidden">
           <img
             src={masterCard}
             alt="MasterCard"
@@ -140,6 +140,7 @@ export default function NewCard() {
             {cvc || "CVC"}
           </div>
         </div>
+
       </div>
 
       {cardNumber.replace(/\s/g, "").length === 16 && (
