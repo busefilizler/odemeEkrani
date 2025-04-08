@@ -12,7 +12,8 @@ const inputStyles = {
   },
 };
 const cards = {
-  moneyPoint: "1.000 TL",
+  moneyPoint: "1000",
+  currency: "TL",
   installments: [
     {
       label: "Tek Çekim",
@@ -154,6 +155,7 @@ export default function NewCard() {
           <InstallmentOptions
             installments={cards.installments}
             moneyPoint={cards.moneyPoint}
+            currency={cards.currency}
           />
         </div>
       )}

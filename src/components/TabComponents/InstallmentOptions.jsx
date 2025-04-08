@@ -3,7 +3,11 @@ import { Radio, FormControl, RadioGroup, Checkbox } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
 import PrePaymentModal from "../Modals/PrePaymentModal";
 import { formatAmount } from "../../utils/AmountFormat.js";
-export default function InstallmentOptions({ installments, moneyPoint }) {
+export default function InstallmentOptions({
+  installments,
+  moneyPoint,
+  currency,
+}) {
   const [selectedInstallment, setSelectedInstallment] = useState("");
   const [useMoneyPoint, setUseMoneyPoint] = useState(false);
   const [use3DSecure, setUse3DSecure] = useState(false);
@@ -68,7 +72,8 @@ export default function InstallmentOptions({ installments, moneyPoint }) {
                     )}
                   </span>
                   <span className="text-xs md:text-sm text-right">
-                  {installment.installment} x{""} {formatAmount(installment.amount)}
+                    {installment.installment} x{""}{" "}
+                    {formatAmount(installment.amount)} {currency}
                   </span>
                 </div>
               </div>

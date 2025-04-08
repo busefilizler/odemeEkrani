@@ -18,6 +18,7 @@ export default function RegisteredCards() {
       cardHolder: "Buse Durudoğan",
       expirationDate: "01/2025",
       moneyPoint: "1000",
+      currency: "TL",
       installments: [
         {
           label: "Tek Çekim",
@@ -76,6 +77,7 @@ export default function RegisteredCards() {
       cardHolder: "Ahmet Yılmaz Durkalidaroğlu",
       expirationDate: "06/2024",
       moneyPoint: "300",
+      currency: "TL",
       installments: [
         {
           label: "Tek Çekim",
@@ -148,6 +150,7 @@ export default function RegisteredCards() {
           <InstallmentOptions
             installments={selectedCard.installments}
             moneyPoint={selectedCard.moneyPoint}
+            currency={selectedCard.currency}
           />{" "}
         </div>
       </div>
@@ -189,6 +192,7 @@ export default function RegisteredCards() {
           <InstallmentOptions
             installments={selectedCard.installments}
             moneyPoint={selectedCard.moneyPoint}
+            currency={selectedCard.currency}
           />{" "}
         </div>
       </div>
