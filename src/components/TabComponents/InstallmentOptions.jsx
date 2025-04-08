@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  Radio,
-  FormControl,
-  RadioGroup,
-  Checkbox,
-} from "@mui/material";
+import { Radio, FormControl, RadioGroup, Checkbox } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
 import PrePaymentModal from "../Modals/PrePaymentModal";
 
@@ -15,6 +10,7 @@ export default function InstallmentOptions({ installments, moneyPoint }) {
   const [approveLightingText, setApproveLightingText] = useState(false);
   const [approveUsageTerms, setApproveUsageTerms] = useState(false);
   const [open, setOpen] = useState(false);
+  const [showAll, setShowAll] = useState(false); // Tümünü gösterme durumu
 
   const handleChange = (setter) => (e) =>
     setter(e.target.type === "checkbox" ? e.target.checked : e.target.value);
@@ -25,17 +21,32 @@ export default function InstallmentOptions({ installments, moneyPoint }) {
     "&.Mui-checked": { color: deepPurple[600] },
   };
 
+  const visibleInstallments = showAll ? installments : installments.slice(0, 3); // İlk 3'ü göster veya tümünü göster
+
   return (
     <>
       <div className="rounded-lg w-full border border-[#E0E0E0]">
-        <h3 className="text-lg font-semibold p-3 bg-[#E0E0E0]">Taksit Seçenekleri</h3>
+        <div className="flex flex-row w-full justify-between items-center bg-[#E0E0E0]">
+          <div className="text-lg font-semibold p-3 ">
+            Taksit Seçenekleri
+          </div>
+          {installments.length > 3 && (
+            <div
+              className="text-center cursor-pointer text-[#673ab7] pr-3"
+              onClick={() => setShowAll(!showAll)}
+            >
+              {showAll ? "Gizle" : "Tümünü Gör"}
+            </div>
+          )}
+        </div>
+
         <FormControl component="fieldset" style={{ width: "100%" }}>
           <RadioGroup
             value={selectedInstallment}
             onChange={handleChange(setSelectedInstallment)}
             sx={{ "&.Mui-checked": { color: deepPurple[500] } }}
           >
-            {installments.map((installment, index) => (
+            {visibleInstallments.map((installment, index) => (
               <div
                 key={index}
                 className="w-full flex items-center border-b border-gray-200 py-2 px-3 hover:bg-gray-100"
@@ -58,7 +69,9 @@ export default function InstallmentOptions({ installments, moneyPoint }) {
                       </span>
                     )}
                   </span>
-                  <span className="text-xs md:text-sm text-right">{installment.amount}</span>
+                  <span className="text-xs md:text-sm text-right">
+                    {installment.amount}
+                  </span>
                 </div>
               </div>
             ))}
@@ -100,7 +113,8 @@ export default function InstallmentOptions({ installments, moneyPoint }) {
             Aydınlatma metinini
           </span>{" "}
           okudum ve onaylıyorum. Kartımı{" "}
-          <span className="font-semibold">PayMed Teknoloji AŞ.</span> altyapısına kaydetmek istiyorum.
+          <span className="font-semibold">PayMed Teknoloji AŞ.</span>{" "}
+          altyapısına kaydetmek istiyorum.
         </div>
       </div>
 
@@ -117,7 +131,8 @@ export default function InstallmentOptions({ installments, moneyPoint }) {
           >
             Kullanım Koşullarını
           </span>{" "}
-          okudum. Kartımı <span className="font-semibold">MasterPass'e</span> kaydetmek istiyorum.
+          okudum. Kartımı <span className="font-semibold">MasterPass'e</span>{" "}
+          kaydetmek istiyorum.
         </div>
       </div>
 
