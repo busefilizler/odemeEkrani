@@ -53,7 +53,7 @@ export default function InstallmentOptions({ installments, moneyPoint }) {
                   <span className="flex items-center text-xs md:text-sm gap-1 flex-1">
                     {installment.label}
                     {installment.isAdvance && (
-                      <span className="font-semibold text-[0.5rem] md:text-xs">
+                      <span className="font-semibold text-[0.5rem] md:text-xs text-[#673ab7]">
                         (Peşin Fiyatına)
                       </span>
                     )}
