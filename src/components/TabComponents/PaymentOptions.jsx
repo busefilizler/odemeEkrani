@@ -6,7 +6,7 @@ import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import RegisteredCards from "./RegisteredCards";
 import NewCard from "./NewCard";
 import { deepPurple } from "@mui/material/colors";
-
+import PaymentIcon from "@mui/icons-material/Payment";
 export default function PaymentOptions() {
   const [isPaymentMethodChanged, setIsPaymentMethodChanged] = useState(false);
 
@@ -66,7 +66,44 @@ export default function PaymentOptions() {
               />
             }
             title="Diğer Ödeme Seçenekleri"
-            content="Havale/EFT, Kapıda Ödeme gibi diğer seçenekler mevcut."
+            content={
+              <>
+                <div className="flex flex-col gap-2">
+                  <PaymentOptionAccordion
+                    icon={
+                      <PaymentIcon
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          color: deepPurple[500],
+                        }}
+                      />
+                    }
+                    title="Parçalı Ödeme"
+                    backgroundColor="#F3F4F6"
+                    fontSize="0.8rem"
+                    content={<div>buse</div>}
+                  />
+                  <PaymentOptionAccordion
+                    icon={
+                      <PaymentIcon
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          color: deepPurple[500],
+                        }}
+                      />
+                    }
+                    title="Alışveriş Kredisi"
+                    backgroundColor="#F3F4F6"
+                    fontSize="0.8rem"
+                    content={<div>buse</div>}
+                  />
+                </div>
+              </>
+            }
           />
         </div>
       </AccordionComponent>

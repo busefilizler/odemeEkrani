@@ -4,10 +4,17 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const PaymentOptionAccordion = ({ icon, title, content, defaultExpanded = false, }) => {
+const PaymentOptionAccordion = ({
+  icon,
+  title,
+  content,
+  defaultExpanded = false,
+  backgroundColor = "#fff",
+  fontSize = "1rem",
+}) => {
   return (
     <div>
-      <Accordion defaultExpanded={defaultExpanded} sx={{ borderRadius: 1 }}>
+      <Accordion defaultExpanded={defaultExpanded} sx={{ borderRadius: 1, backgroundColor: backgroundColor }}>
         <AccordionSummary
           expandIcon={
             <ExpandMoreIcon
@@ -21,13 +28,12 @@ const PaymentOptionAccordion = ({ icon, title, content, defaultExpanded = false,
           aria-controls={`${title}-content`}
           id={`${title}-header`}
           sx={{
-            backgroundColor: "#fff",
             borderRadius: 1,
             "&:hover": {
-              backgroundColor: "#E0E0E0",
+              backgroundColor: backgroundColor,
             },
             fontWeight: "bold",
-            fontSize: "1rem",
+            fontSize: fontSize,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
