@@ -7,6 +7,7 @@ import RegisteredCards from "./RegisteredCards";
 import NewCard from "./NewCard";
 import { deepPurple } from "@mui/material/colors";
 import PaymentIcon from "@mui/icons-material/Payment";
+import PartialPaymentBox from "./PartialPayment/PartialPaymentBox";
 export default function PaymentOptions() {
   const [isPaymentMethodChanged, setIsPaymentMethodChanged] = useState(false);
 
@@ -68,7 +69,7 @@ export default function PaymentOptions() {
             title="Diğer Ödeme Seçenekleri"
             content={
               <>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-3">
                   <PaymentOptionAccordion
                     icon={
                       <PaymentIcon
@@ -83,7 +84,15 @@ export default function PaymentOptions() {
                     title="Parçalı Ödeme"
                     backgroundColor="#F3F4F6"
                     fontSize="0.8rem"
-                    content={<div>buse</div>}
+                    content={
+                      <div>
+                        <div>
+                          Ödemenizi istediğin tutarda iki kredi kartına
+                          paylaştırarak tamamlayabilirsiniz.
+                        </div>
+                      <PartialPaymentBox />
+                      </div>
+                    }
                   />
                   <PaymentOptionAccordion
                     icon={

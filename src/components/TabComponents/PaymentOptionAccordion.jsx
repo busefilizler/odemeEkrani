@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -12,9 +12,19 @@ const PaymentOptionAccordion = ({
   backgroundColor = "#fff",
   fontSize = "1rem",
 }) => {
+  const [expanded, setExpanded] = useState(defaultExpanded);
+
+  const handleChange = (_, isExpanded) => {
+    setExpanded(isExpanded);
+  };
+
   return (
     <div>
-      <Accordion defaultExpanded={defaultExpanded} sx={{ borderRadius: 1, backgroundColor: backgroundColor }}>
+      <Accordion
+        expanded={expanded}
+        onChange={handleChange}
+        sx={{ borderRadius: 1 }}
+      >
         <AccordionSummary
           expandIcon={
             <ExpandMoreIcon
@@ -29,9 +39,7 @@ const PaymentOptionAccordion = ({
           id={`${title}-header`}
           sx={{
             borderRadius: 1,
-            "&:hover": {
-              backgroundColor: backgroundColor,
-            },
+            backgroundColor: expanded ? backgroundColor : "#fff",
             fontWeight: "bold",
             fontSize: fontSize,
             display: "flex",
@@ -45,7 +53,7 @@ const PaymentOptionAccordion = ({
           </div>
         </AccordionSummary>
 
-        <AccordionDetails>
+        <AccordionDetails sx={{ backgroundColor: backgroundColor }}>
           <div>{content}</div>
         </AccordionDetails>
       </Accordion>
