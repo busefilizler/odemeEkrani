@@ -25,7 +25,7 @@ export default function PartialPaymentOption({
       fontSize="0.8rem"
       content={
         <div>
-          <div>
+          <div className="pb-3">
             Ödemenizi istediğin tutarda iki kredi kartına paylaştırarak
             tamamlayabilirsiniz.
           </div>
