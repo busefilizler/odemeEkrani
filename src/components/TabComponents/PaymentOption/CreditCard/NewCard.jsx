@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TextField } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
-import masterCard from "../../../public/masterCard.png";
+import masterCard from "../../../../../public/masterCard.png";
 import InstallmentOptions from "./InstallmentOptions";
 
 const inputStyles = {

@@ -1,7 +1,7 @@
-import CustomerInfo from "./CustomerInfo";
-import OrderDetails from "./OrderDetails";
-import DeliveryInformation from "./DeliveryInformation";
-import PaymentOptions from "./PaymentOptions";
+import CustomerInfo from "./CustomerInfo/CustomerInfo";
+import OrderDetails from "./OrderDetails/OrderDetails";
+import DeliveryInformation from "./DeliveryInformation/DeliveryInformation";
+import PaymentOptions from "./PaymentOption/PaymentOptions";
 import React from "react";
 export default function AllTabComponent() {
   return (

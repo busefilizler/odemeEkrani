@@ -2,18 +2,23 @@ import React from "react";
 import PaymentIcon from "@mui/icons-material/Payment";
 import { deepPurple } from "@mui/material/colors";
 import TextField from "@mui/material/TextField";
-import PaymentOptionAccordion from "./PaymentOptionAccordion";
-import PartialPaymentBox from "./PartialPayment/PartialPaymentBox";
-import CardSelector from "./CardSelector";
+import PaymentOptionAccordion from "../../Shared/PaymentOptionAccordion";
+import PartialPaymentBox from "./PartialPaymentBox";
+import CardSelector from "../../CreditCard/CardSelector"
 
 export default function PartialPaymentOption({
   partialAmount,
   setPartialAmount,
   isChanged,
   onChange,
+  selected,
+  setSelected,
 }) {
   return (
     <PaymentOptionAccordion
+      name="partial"
+      selected={selected}
+      onChange={setSelected}
       icon={<PaymentIcon sx={{ color: deepPurple[500] }} />}
       title="Parçalı Ödeme"
       backgroundColor="#F3F4F6"
@@ -42,7 +47,11 @@ export default function PartialPaymentOption({
             />
           </div>
 
-          <CardSelector isChanged={isChanged} onChange={onChange} selectedBgColor={'bg-white'} />
+          <CardSelector
+            isChanged={isChanged}
+            onChange={onChange}
+            selectedBgColor="bg-white"
+          />
         </div>
       }
     />

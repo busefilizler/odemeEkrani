@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Radio, FormControl, RadioGroup, Checkbox } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
-import PrePaymentModal from "../Modals/PrePaymentModal";
-import { formatAmount } from "../../utils/AmountFormat.js";
+import PrePaymentModal from "../../../Modals/PrePaymentModal.jsx";
+import { formatAmount } from "../../../../utils/AmountFormat.js";
 export default function InstallmentOptions({
   installments,
   moneyPoint,

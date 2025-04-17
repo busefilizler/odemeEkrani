@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AccordionComponent from "./AccordionComponent";
+import AccordionComponent from "../AccordionComponent";
 import TextField from "@mui/material/TextField";
 
 const CustomerInfo = () => {

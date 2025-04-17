@@ -1,5 +1,5 @@
 import React from "react";
-import AccordionComponent from "./AccordionComponent";
+import AccordionComponent from "../AccordionComponent";
 
 // Mock API response
 const orderData = {
