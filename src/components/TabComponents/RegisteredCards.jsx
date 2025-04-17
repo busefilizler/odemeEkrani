@@ -3,7 +3,7 @@ import Radio from "@mui/material/Radio";
 import InstallmentOptions from "./InstallmentOptions";
 import { deepPurple } from "@mui/material/colors";
 
-export default function RegisteredCards() {
+export default function RegisteredCards({ selectedBgColor = "bg-[#ede7f6]" }) {
   const [selectedValue, setSelectedValue] = React.useState("a");
 
   const handleChange = (event) => {
@@ -120,8 +120,8 @@ export default function RegisteredCards() {
         {cards.map((card) => (
           <div
             key={card.id}
-            className={`flex flex-row w-full border border-gray-200 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${
-              selectedValue === card.id ? "bg-[#f5f1f1]" : ""
+            className={`flex flex-row w-full border border-gray-400 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${
+              selectedValue === card.id ? selectedBgColor : ""
             }`}
           >
             <Radio
@@ -163,8 +163,8 @@ export default function RegisteredCards() {
         {cards.map((card) => (
           <div
             key={card.id}
-            className={`flex flex-row w-full border border-gray-200 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${
-              selectedValue === card.id ? "bg-[#f5f1f1]" : ""
+            className={`flex flex-row w-full border border-gray-400 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${
+              selectedValue === card.id ? selectedBgColor : ""
             }`}
           >
             <Radio

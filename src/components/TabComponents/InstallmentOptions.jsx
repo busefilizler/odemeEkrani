@@ -116,7 +116,7 @@ export default function InstallmentOptions({
           >
             Aydınlatma metinini
           </span>{" "}
-          okudum ve onaylıyorum. Kartımı{" "}
+          okudum. Kartımı{" "}
           <span className="font-semibold">PayMed Teknoloji AŞ.</span>{" "}
           altyapısına kaydetmek istiyorum.
         </div>
