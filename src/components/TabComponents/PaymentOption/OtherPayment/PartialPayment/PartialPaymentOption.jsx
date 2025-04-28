@@ -22,7 +22,7 @@ export default function PartialPaymentOption({
       icon={<PaymentIcon sx={{ color: deepPurple[500] }} />}
       title="Parçalı Ödeme"
       backgroundColor="#F3F4F6"
-      fontSize="0.8rem"
+      fontSize="0.9rem"
       content={
         <div>
           <div className="pb-3">
