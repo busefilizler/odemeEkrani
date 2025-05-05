@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 import PaymentOptionAccordion from "../../Shared/PaymentOptionAccordion";
 import PartialPaymentBox from "./PartialPaymentBox";
 import CardSelector from "../../CreditCard/CardSelector";
+import { Button } from "@mui/material";
 
 export default function PartialPaymentOption({
   partialAmount,
@@ -79,6 +80,28 @@ export default function PartialPaymentOption({
             onChange={onChange}
             selectedBgColor="bg-white"
           />
+          <Button
+            variant="outlined"
+            size="small"
+            fullWidth
+            className="rounded-lg mt-4"
+            sx={{
+              color: "white",
+              borderColor: "#d1d5dc",
+              backgroundColor: "#673ab7",
+              "&:hover": {
+                backgroundColor: "#ede7f6",
+                borderColor: "#d1d5dc",
+                color: "#673ab7",
+              },
+              paddingY: 1.5,
+              paddingX: { xs: 2, md: 4 },
+              minHeight: "56px",
+            }}
+            onClick={() => {}}
+          >
+            <div>Kayıtlı kartım ile belirtilen tutar kadar ödeme yap</div>
+          </Button>
         </div>
       }
     />
