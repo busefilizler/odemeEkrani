@@ -80,7 +80,7 @@ export default function TotalCountBox() {
         <div className="pb-2 flex items-start w-full">
           <AgreementCheckbox />
         </div>
-        <div className="flex flex-row justify-between w-full pt-2 pb-1 border-t border-gray-200">
+        <div className="flex flex-row justify-between w-full pt-2 pb-1 border-t border-gray-300">
           <div className="flex flex-col">
             <Typography className="!font-medium" sx={{ fontSize: 12 }}>
               Toplam Tutar ({orderData.itemCount} Ürün)
@@ -116,7 +116,7 @@ export default function TotalCountBox() {
         </div>
       </div>
       {isExpanded && (
-        <div className="border-t border-gray-200">
+        <div className="border-t border-gray-300">
           <div className="px-4 py-1">
             <Typography component="div" className="!font-normal" sx={{ fontSize: 14 }}>
               <div className="flex flex-row items-center justify-between">

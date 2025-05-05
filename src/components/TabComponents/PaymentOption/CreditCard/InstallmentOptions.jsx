@@ -51,7 +51,7 @@ export default function InstallmentOptions({
             {visibleInstallments.map((installment, index) => (
               <div
                 key={index}
-                className="w-full flex items-center border-b border-gray-200 py-2 pr-3 hover:bg-gray-100"
+                className="w-full flex items-center border-b border-gray-300 py-2 pr-3 hover:bg-gray-100"
               >
                 <Radio
                   value={installment.label}

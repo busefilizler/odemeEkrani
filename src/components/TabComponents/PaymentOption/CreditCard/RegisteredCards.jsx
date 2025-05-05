@@ -120,7 +120,7 @@ export default function RegisteredCards({ selectedBgColor = "bg-[#ede7f6]" }) {
         {cards.map((card) => (
           <div
             key={card.id}
-            className={`flex flex-row w-full border border-gray-400 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${
+            className={`flex flex-row w-full border border-gray-300 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${
               selectedValue === card.id ? selectedBgColor : ""
             }`}
           >
@@ -163,7 +163,7 @@ export default function RegisteredCards({ selectedBgColor = "bg-[#ede7f6]" }) {
         {cards.map((card) => (
           <div
             key={card.id}
-            className={`flex flex-row w-full border border-gray-400 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${
+            className={`flex flex-row w-full border border-gray-300 rounded-lg py-2 pr-1 mb-4 gap-2 sm:gap-0 ${
               selectedValue === card.id ? selectedBgColor : ""
             }`}
           >
